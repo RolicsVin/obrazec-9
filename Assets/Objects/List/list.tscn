@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dfoe0ep1lipjg"]
+
+[ext_resource type="Script" uid="uid://b1fkwibmupmnr" path="res://Data/Classes/List.gd" id="1_6jfil"]
+[ext_resource type="ArrayMesh" uid="uid://b0vwgt52ayx4n" path="res://Assets/Models/Computer/ComputerMesh.res" id="2_o6oq7"]
+
+[sub_resource type="GDScript" id="GDScript_o6oq7"]
+resource_name = "UI"
+script/source = "extends Control
+
+@onready var label = $Panel/Label
+"
+
+[node name="List" type="Area3D" unique_id=1638639880]
+script = ExtResource("1_6jfil")
+metadata/_custom_type_script = "uid://b1fkwibmupmnr"
+
+[node name="UI" type="Control" parent="." unique_id=1824422939]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_o6oq7")
+
+[node name="Panel" type="Panel" parent="UI" unique_id=618030846]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -235.0
+offset_right = 167.0
+offset_bottom = 235.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/Panel" unique_id=301442780]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=718083468]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[node name="ComputerMesh" type="MeshInstance3D" parent="." unique_id=1774021850]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.035, 0, 0)
+mesh = ExtResource("2_o6oq7")
+
+[connection signal="hidden" from="UI" to="." method="_on_ui_hidden"]

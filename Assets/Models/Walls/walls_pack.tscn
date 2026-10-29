@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cjdwobdq6mlhc"]
+
+[ext_resource type="Shape3D" uid="uid://dgwlsth1htf72" path="res://Assets/Models/Walls/wall_colision.tres" id="1_yqjnc"]
+[ext_resource type="ArrayMesh" uid="uid://b7pmpmmxw1o2l" path="res://Assets/Models/Walls/Куб.res" id="1_yv1h0"]
+[ext_resource type="ArrayMesh" uid="uid://cbs0bgwgpyp5h" path="res://Assets/Models/Walls/Куб_001.res" id="2_yqjnc"]
+[ext_resource type="ArrayMesh" uid="uid://cws73gtkbj355" path="res://Assets/Models/Walls/Куб_002.res" id="3_8amq6"]
+[ext_resource type="ArrayMesh" uid="uid://cfvq5kpjl0cpj" path="res://Assets/Models/Walls/Куб_003.res" id="4_gsk1f"]
+
+[node name="WallsPack" type="Node3D" unique_id=1376988750]
+
+[node name="Block1" type="StaticBody3D" parent="." unique_id=761520148]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Block1" unique_id=2104005529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5001526, 0)
+shape = ExtResource("1_yqjnc")
+
+[node name="Block1" type="MeshInstance3D" parent="Block1" unique_id=729663523]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+mesh = ExtResource("1_yv1h0")
+
+[node name="Block2" type="StaticBody3D" parent="." unique_id=135487773]
+visible = false
+
+[node name="Block2" type="MeshInstance3D" parent="Block2" unique_id=1049521803]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+mesh = ExtResource("2_yqjnc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Block2" unique_id=1292452259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5001526, 0)
+shape = ExtResource("1_yqjnc")
+
+[node name="Block3" type="StaticBody3D" parent="." unique_id=414423355]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Block3" unique_id=1610223219]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5001526, 0)
+shape = ExtResource("1_yqjnc")
+
+[node name="Block3" type="MeshInstance3D" parent="Block3" unique_id=355591934]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+mesh = ExtResource("3_8amq6")
+
+[node name="Block4" type="StaticBody3D" parent="." unique_id=1026908207]
+visible = false
+
+[node name="Block4" type="MeshInstance3D" parent="Block4" unique_id=1698693777]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+mesh = ExtResource("4_gsk1f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Block4" unique_id=796574492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5001526, 0)
+shape = ExtResource("1_yqjnc")

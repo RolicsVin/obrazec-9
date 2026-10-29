@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://njdudchdwvy0"]
+
+[ext_resource type="PackedScene" uid="uid://bs8nuceygn4xc" path="res://Assets/Player/player.tscn" id="1_n0qsc"]
+[ext_resource type="PackedScene" uid="uid://w1wtou7k8gwb" path="res://Assets/Objects/Button/button_area.tscn" id="6_0urlm"]
+[ext_resource type="PackedScene" uid="uid://dfoe0ep1lipjg" path="res://Assets/Objects/List/list.tscn" id="6_rfktq"]
+[ext_resource type="PackedScene" uid="uid://6kcoat1nxpe6" path="res://Assets/Objects/Box/box.tscn" id="7_0urlm"]
+[ext_resource type="Script" uid="uid://c86tpn5fovisd" path="res://Data/Classes/Graviti.gd" id="8_62b6n"]
+[ext_resource type="PackedScene" uid="uid://cnao3rp8aq0xq" path="res://Assets/Objects/Platform/rot_platform.tscn" id="8_77x7w"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n0qsc"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_dilhk"]
+sky_material = SubResource("ProceduralSkyMaterial_n0qsc")
+
+[sub_resource type="Environment" id="Environment_3mhv4"]
+background_mode = 2
+sky = SubResource("Sky_dilhk")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dilhk"]
+size = Vector3(0.359375, 7.128662, 4.6467285)
+
+[sub_resource type="BoxMesh" id="BoxMesh_n0qsc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n0qsc"]
+size = Vector3(3.140625, 10.0251465, 268.02734)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0urlm"]
+albedo_color = Color(0.3120786, 0.4174784, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_77x7w"]
+material = SubResource("StandardMaterial3D_0urlm")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xoyoh"]
+radius = 1.3306042
+
+[node name="Level1" type="Node3D" unique_id=1488230902]
+
+[node name="Light" type="Node" parent="." unique_id=1960960670]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Light" unique_id=1195848021]
+environment = SubResource("Environment_3mhv4")
+
+[node name="Sun" type="DirectionalLight3D" parent="Light" unique_id=133858324]
+transform = Transform3D(0.6573227, -0.6526448, 0.37680456, 2.7805946e-08, 0.49999997, 0.86602545, -0.75360924, -0.5692582, 0.32866132, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Background" type="Node" parent="." unique_id=919741197]
+
+[node name="Platform" type="StaticBody3D" parent="Background" unique_id=364051339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.02615, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/Platform" unique_id=679234738]
+shape = SubResource("BoxShape3D_dilhk")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="Platform2" type="StaticBody3D" parent="Background" unique_id=1407400132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 101.92825, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/Platform2" unique_id=1007801701]
+shape = SubResource("BoxShape3D_dilhk")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="Floor" type="StaticBody3D" parent="Background" unique_id=959581922]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.968876, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Background/Floor" unique_id=1092231668]
+transform = Transform3D(3.1561458, 0, 9.094947e-13, 0, 10.02435, 0, 0, 0, 268.02957, 0, -5.0135245, 0)
+mesh = SubResource("BoxMesh_n0qsc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/Floor" unique_id=1493031216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.0135245, 0)
+shape = SubResource("BoxShape3D_n0qsc")
+
+[node name="Floor2" type="StaticBody3D" parent="Background" unique_id=1351157986]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.968876, 17.52331, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Background/Floor2" unique_id=75559045]
+transform = Transform3D(3.1561458, 0, 9.094947e-13, 0, 10.02435, 0, 0, 0, 268.02957, 0, -5.0135245, 0)
+mesh = SubResource("BoxMesh_n0qsc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/Floor2" unique_id=1123008647]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.0135245, 0)
+shape = SubResource("BoxShape3D_n0qsc")
+
+[node name="Components" type="Node" parent="." unique_id=360484998]
+
+[node name="Gravity" type="Area3D" parent="Components" unique_id=1911554712]
+script = ExtResource("8_62b6n")
+metadata/_custom_type_script = "uid://c86tpn5fovisd"
+
+[node name="ButtonArea" parent="Components" unique_id=1000394081 node_paths=PackedStringArray("connected") instance=ExtResource("6_0urlm")]
+connected = NodePath("../Gravity")
+invert = true
+
+[node name="ButtonArea2" parent="Components" unique_id=460086481 node_paths=PackedStringArray("connected") instance=ExtResource("6_0urlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.538748, 7.4721327, 0)
+connected = NodePath("../Gravity")
+invert = true
+
+[node name="Rot_Platform" parent="Components" unique_id=557120532 instance=ExtResource("8_77x7w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.581, 2.492, 0)
+
+[node name="Box" parent="Components" unique_id=1049353401 instance=ExtResource("7_0urlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.347, 0.499, 0)
+
+[node name="LevelComponent" type="Node" parent="." unique_id=1845701943]
+
+[node name="Player" parent="." unique_id=107747127 instance=ExtResource("1_n0qsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0999928, 1.1748314, 0)
+
+[node name="List" parent="." unique_id=1638639880 instance=ExtResource("6_rfktq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.768111, 0.42737806, 0)
+text = "Тут можно  писать сюжет"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="List" unique_id=976251444]
+transform = Transform3D(0.4938134, 0, 0, 0, 0.455, 0, 0, 0, 0.455, 0, 0, 0)
+mesh = SubResource("BoxMesh_77x7w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="List" unique_id=2067746386]
+shape = SubResource("SphereShape3D_xoyoh")

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bhptb2llimv5h"]
+
+[ext_resource type="Texture2D" uid="uid://bttcatexrrvp3" path="res://Assets/Models/Exit_To_Level/тайловая текстура металла (1)/plane_divided_DefaultMaterial_BaseColor.png" id="1_hn54x"]
+[ext_resource type="Texture2D" uid="uid://5xoudnnrtwe1" path="res://Assets/Models/Exit_To_Level/тайловая текстура металла (1)/plane_divided_DefaultMaterial_Roughness.png" id="2_0ox3x"]
+
+[resource]
+resource_name = "metal"
+albedo_texture = ExtResource("1_hn54x")
+roughness_texture = ExtResource("2_0ox3x")

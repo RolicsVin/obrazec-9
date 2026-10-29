@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bdsw8lidaddcc"]
+
+[ext_resource type="Texture2D" uid="uid://dqfonnekpkmnl" path="res://Assets/Models/Platform/Корпус_baseColor.png" id="1_4la7w"]
+[ext_resource type="Texture2D" uid="uid://3kgfeufm3lpy" path="res://Assets/Models/Platform/Корпус_occlusionRoughnessMetallic.png" id="2_etans"]
+
+[resource]
+resource_name = "Body"
+albedo_texture = ExtResource("1_4la7w")
+metallic_texture = ExtResource("2_etans")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_etans")
+roughness_texture_channel = 1
+metadata/_gltf_primary_texture_coord = 0

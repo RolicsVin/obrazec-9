@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ctstaofwgapto"]
+
+[ext_resource type="Texture2D" uid="uid://b3dstxp8knoej" path="res://Assets/Models/Block_2/texture/model_DefaultMaterial_BaseColor.png" id="1_ep4e3"]
+[ext_resource type="Texture2D" uid="uid://cvkrsnbh41yss" path="res://Assets/Models/Block_2/texture/model_DefaultMaterial_Roughness.png" id="2_dt41h"]
+
+[resource]
+resource_name = "Block1-2"
+albedo_texture = ExtResource("1_ep4e3")
+roughness_texture = ExtResource("2_dt41h")

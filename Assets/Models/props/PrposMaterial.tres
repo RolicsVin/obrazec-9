@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://by72yj745o6co"]
+
+[ext_resource type="Texture2D" uid="uid://dqfonnekpkmnl" path="res://Assets/Models/Platform/Корпус_baseColor.png" id="1_mvw2i"]
+
+[resource]
+resource_name = "PrposMaterial"
+albedo_texture = ExtResource("1_mvw2i")

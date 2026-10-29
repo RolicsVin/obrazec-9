@@ -1,0 +1,21 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://cs4aqmoed1fwh"]
+
+[sub_resource type="Curve" id="Curve_165gg"]
+_data = [Vector2(0.0025906712, 0.61797756), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.3424308, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_0g1gn"]
+curve = SubResource("Curve_165gg")
+
+[resource]
+lifetime_randomness = 0.3
+use_rotation_3d = true
+rotation_3d_min = Vector3(0, 0, 0)
+rotation_3d_max = Vector3(360, 360, 360)
+initial_velocity_max = 3.0
+gravity = Vector3(-42.055, 0, 0)
+scale_min = 0.5
+scale_max = 0.7
+alpha_curve = SubResource("CurveTexture_0g1gn")
+turbulence_noise_strength = 20.0
+turbulence_noise_speed = Vector3(5, 5, 5)

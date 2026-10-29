@@ -1,0 +1,9 @@
+[gd_resource type="SphereMesh" format=3 uid="uid://cgv8smifran6a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4sjce"]
+transparency = 4
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.26666668)
+
+[resource]
+material = SubResource("StandardMaterial3D_4sjce")

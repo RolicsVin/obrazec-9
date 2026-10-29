@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dm6uloa72xvgj"]
+
+[ext_resource type="Script" uid="uid://dex72ib7yirc3" path="res://Data/Classes/lazer.gd" id="1_xauh3"]
+[ext_resource type="AudioStream" uid="uid://w5pnw3metdvt" path="res://Assets/Objects/Lazer/Spark.mp3" id="2_ca4pm"]
+[ext_resource type="ArrayMesh" uid="uid://cwo6cp2hr4m6w" path="res://Assets/Models/Wires/Цилиндр.res" id="3_ca4pm"]
+[ext_resource type="Material" uid="uid://bv5br1g8uruj5" path="res://Assets/VFX/Spark/Spark.tres" id="4_bcu38"]
+[ext_resource type="Material" uid="uid://prpw8qhekc6a" path="res://Data/meterials/Cooper.tres" id="4_rug6r"]
+[ext_resource type="ArrayMesh" uid="uid://ytr65f8tpcsh" path="res://Assets/Models/Sparks/Основная_sparks.res" id="5_rug6r"]
+[ext_resource type="PackedScene" uid="uid://cci82ldvykiju" path="res://GodoTools/tools/remove_node.tscn" id="7_rug6r"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ca4pm"]
+height = 4.2939453
+radius = 0.025390625
+
+[node name="Lazer" type="Node3D" unique_id=35362207 node_paths=PackedStringArray("timer", "particles")]
+script = ExtResource("1_xauh3")
+timer = NodePath("Timer")
+particles = NodePath("GPUParticles3D")
+metadata/_custom_type_script = "uid://dex72ib7yirc3"
+
+[node name="Area3D" type="Area3D" parent="." unique_id=402744647]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1144862543]
+shape = SubResource("CylinderShape3D_ca4pm")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Area3D" unique_id=1679902518]
+light_color = Color(0.7493846, 0.40235513, 1.92523e-07, 1)
+omni_range = 3.0
+
+[node name="Timer" type="Timer" parent="." unique_id=678414571]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=2013353623]
+stream = ExtResource("2_ca4pm")
+autoplay = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1635179606]
+transform = Transform3D(134.13, 0, 0, 0, -5.863009e-06, -134.13, 0, 134.13, -5.863009e-06, 0, 0, 0)
+mesh = ExtResource("3_ca4pm")
+surface_material_override/0 = ExtResource("4_rug6r")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1464800262]
+amount = 40
+process_material = ExtResource("4_bcu38")
+draw_pass_1 = ExtResource("5_rug6r")
+
+[node name="RemoveNode" parent="GPUParticles3D" unique_id=800646047 instance=ExtResource("7_rug6r")]
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="timer_timeout"]

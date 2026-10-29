@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://1s1incqre6pn"]
+
+[ext_resource type="Script" uid="uid://dbxtifwuv5k70" path="res://Scenes/dead_screen.gd" id="1_kjfcv"]
+
+[node name="DeadScreen" type="Control" unique_id=897205825]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kjfcv")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1540962503]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14044744, 0.14044744, 0.14044744, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1633976043]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ты умер...
+Перезапустим игру?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="restart" type="Button" parent="." unique_id=516363551]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = 49.0
+offset_right = 104.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Начать заново"
+
+[node name="quit" type="Button" parent="." unique_id=344342717]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = 107.0
+offset_right = 86.0
+offset_bottom = 153.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "В главное меню"
+
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bdj2tjx0bkhy5"]
+
+[resource]
+resource_name = "Monitor"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+emission_enabled = true
+emission = Color(0.34176847, 0.7518433, 1, 1)
+emission_energy_multiplier = 5.0

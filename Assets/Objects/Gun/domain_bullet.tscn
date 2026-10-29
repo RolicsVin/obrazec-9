@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dxdcx2is77hix"]
+
+[ext_resource type="Script" uid="uid://dy6l8hqbdkotu" path="res://Assets/Objects/Gun/domain_bullet.gd" id="1_owob0"]
+
+[node name="DomainBullet" type="Node3D" unique_id=2002314878]
+script = ExtResource("1_owob0")

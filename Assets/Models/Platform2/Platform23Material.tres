@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://htxwplcjqe1v"]
+
+[ext_resource type="Texture2D" uid="uid://chehlpxeuoq80" path="res://Assets/Models/tower/bc2.png" id="1_smyc3"]
+
+[resource]
+resource_name = "Platform23Material"
+albedo_texture = ExtResource("1_smyc3")

@@ -1,0 +1,13 @@
+[gd_resource type="PlaneMesh" format=3 uid="uid://dfq1lxba08voy"]
+
+[ext_resource type="Texture2D" uid="uid://ddmm8itbbv4y4" path="res://Assets/fog.png" id="1_hwgpy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0g1gn"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_hwgpy")
+albedo_texture_msdf = true
+
+[resource]
+material = SubResource("StandardMaterial3D_0g1gn")

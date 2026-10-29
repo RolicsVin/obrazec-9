@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://mklhas2f86ce"]
+
+[ext_resource type="ArrayMesh" uid="uid://dswtbcdrx7qml" path="res://Assets/Models/Grass/Плоскость.res" id="1_gvved"]
+
+[node name="Grass" type="MeshInstance3D" unique_id=1909026310]
+transform = Transform3D(97.58761, 0, 0, 0, -1.16333495e-05, 97.5876, 0, -97.5876, -1.16333495e-05, 0, 0, 0)
+mesh = ExtResource("1_gvved")

@@ -1,0 +1,34 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://bv5br1g8uruj5"]
+
+[sub_resource type="Curve" id="Curve_0g1gn"]
+_data = [Vector2(0.507772, 1), 0.0, 0.0447584, 0, 0, Vector2(1, 0), -6.152312, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_enj4k"]
+curve = SubResource("Curve_0g1gn")
+
+[sub_resource type="Gradient" id="Gradient_35wki"]
+offsets = PackedFloat32Array(0, 0.16944444, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_35wki"]
+gradient = SubResource("Gradient_35wki")
+
+[sub_resource type="Curve" id="Curve_tgr7w"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.3950949, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_vyku5"]
+curve = SubResource("Curve_tgr7w")
+
+[resource]
+particle_flag_align_y = true
+emission_shape = 3
+emission_box_extents = Vector3(0.044, 2.135, 0.044)
+scale_min = 0.01
+scale_max = 0.02
+color_ramp = SubResource("GradientTexture1D_35wki")
+alpha_curve = SubResource("CurveTexture_enj4k")
+emission_curve = SubResource("CurveTexture_vyku5")
+turbulence_enabled = true
+turbulence_noise_strength = 5.19

@@ -1,0 +1,24 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://bs6xk442e7hv6"]
+
+[sub_resource type="Curve" id="Curve_qgvfd"]
+_data = [Vector2(0, 1), 0.0, -1.0025977, 0, 0, Vector2(0.8445596, 0), -1.4511282, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_nqxpq"]
+curve = SubResource("Curve_qgvfd")
+
+[resource]
+particle_flag_align_y = true
+emission_shape_scale = Vector3(0.35, 0.35, 0.19)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+gravity = Vector3(0, 0, 7.11)
+scale_min = 0.01
+scale_max = 0.02
+alpha_curve = SubResource("CurveTexture_nqxpq")
+turbulence_enabled = true
+turbulence_noise_scale = 10.0

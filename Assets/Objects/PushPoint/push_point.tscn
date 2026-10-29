@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://x470vtqyktqt"]
+
+[ext_resource type="Script" uid="uid://cu2g1qihu04ag" path="res://Data/Classes/push_area.gd" id="1_2u0s7"]
+[ext_resource type="ArrayMesh" uid="uid://bgarkvcmqb05c" path="res://Assets/Models/GravityPoint/gravity_point.res" id="2_nqxpq"]
+[ext_resource type="ArrayMesh" uid="uid://ytr65f8tpcsh" path="res://Assets/Models/Sparks/Основная_sparks.res" id="3_nqxpq"]
+[ext_resource type="Material" uid="uid://bs6xk442e7hv6" path="res://Assets/Objects/PushPoint/particle.tres" id="3_qgvfd"]
+[ext_resource type="PackedScene" uid="uid://cci82ldvykiju" path="res://GodoTools/tools/remove_node.tscn" id="5_l7t7x"]
+[ext_resource type="Material" uid="uid://cppqt6jalhhcw" path="res://Assets/Objects/PushPoint/particle_boom.tres" id="5_ne2hx"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hf7dp"]
+height = 1.9575195
+radius = 0.81347656
+
+[node name="PushPoint" type="Area3D" unique_id=1334843661 node_paths=PackedStringArray("mesh", "boom")]
+script = ExtResource("1_2u0s7")
+mesh = NodePath("GravityPoint")
+boom = NodePath("Boom")
+metadata/_custom_type_script = "uid://cu2g1qihu04ag"
+
+[node name="GravityPoint" type="MeshInstance3D" parent="." unique_id=1207389631]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
+mesh = ExtResource("2_nqxpq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=968274297]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -4.167309e-08, 0.95336914)
+shape = SubResource("CylinderShape3D_hf7dp")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=143016104]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3959332)
+amount = 10
+process_material = ExtResource("3_qgvfd")
+draw_pass_1 = ExtResource("3_nqxpq")
+
+[node name="RemoveNode" parent="GPUParticles3D" unique_id=800646047 instance=ExtResource("5_l7t7x")]
+
+[node name="Boom" type="GPUParticles3D" parent="." unique_id=2094705662]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.13704236, 0, 0, 0.52231085)
+emitting = false
+amount = 80
+lifetime = 0.5
+one_shot = true
+process_material = ExtResource("5_ne2hx")
+draw_pass_1 = ExtResource("3_nqxpq")
+
+[node name="RemoveNode" parent="Boom" unique_id=846126079 instance=ExtResource("5_l7t7x")]

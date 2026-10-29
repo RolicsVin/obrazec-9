@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bosj2d0uc6fcm"]
+
+[ext_resource type="Texture2D" uid="uid://b6th6u4ohk32y" path="res://Libriaries/Building/Folding tables/source/SM_Folding_Table_Pack_JFG_1_8.png" id="1_vrk7t"]
+[ext_resource type="Texture2D" uid="uid://dkuud3dj7k7ow" path="res://Libriaries/Building/Folding tables/source/SM_Folding_Table_Pack_JFG_1_9.png" id="2_80ugj"]
+
+[resource]
+resource_name = "M_Folding_Table_JFG_3"
+albedo_texture = ExtResource("1_vrk7t")
+roughness = 0.5
+normal_enabled = true
+normal_texture = ExtResource("2_80ugj")

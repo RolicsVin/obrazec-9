@@ -1,0 +1,572 @@
+[gd_scene format=3 uid="uid://njdudchdwvy0"]
+
+[ext_resource type="Script" uid="uid://cl0sagoc6n14c" path="res://Data/Classes/AtmosphereSounds.gd" id="1_6phgx"]
+[ext_resource type="AudioStream" uid="uid://o130ngrtdvdh" path="res://Assets/AtmosphereSounds/3e7b3c24cee900d.mp3" id="1_k5f4k"]
+[ext_resource type="PackedScene" uid="uid://bs8nuceygn4xc" path="res://Assets/Player/player.tscn" id="1_n0qsc"]
+[ext_resource type="AudioStream" uid="uid://b0ef1bn3vr24e" path="res://Assets/AtmosphereSounds/base.mp3" id="2_6phgx"]
+[ext_resource type="Script" uid="uid://6ygl0xgrtae1" path="res://Scenes/world_environment.gd" id="4_0f350"]
+[ext_resource type="Script" uid="uid://dixjpe52dv3eb" path="res://Scenes/props.gd" id="5_bvt00"]
+[ext_resource type="Script" uid="uid://dam575hit8eb0" path="res://Scenes/path.gd" id="5_wqkje"]
+[ext_resource type="Script" uid="uid://dip26cf4k72ov" path="res://Scenes/ui_level.gd" id="7_8c0lf"]
+[ext_resource type="PackedScene" uid="uid://bblmc4ix4ygg5" path="res://Scenes/logo.tscn" id="8_754fn"]
+[ext_resource type="Texture2D" uid="uid://dqid5uwdmyeva" path="res://Assets/UI/Button/button_pressed2.png" id="9_qxfql"]
+[ext_resource type="Texture2D" uid="uid://cwb2c26d5toih" path="res://Assets/UI/Button/button_hovered.png" id="10_ha31o"]
+[ext_resource type="Texture2D" uid="uid://lt4co4a472im" path="res://Assets/UI/Button/button_pressed.png" id="11_ha31o"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n0qsc"]
+sky_energy_multiplier = 1.3
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_iav5y"]
+sky_material = SubResource("ProceduralSkyMaterial_n0qsc")
+
+[sub_resource type="Environment" id="Environment_3mhv4"]
+background_mode = 1
+sky = SubResource("Sky_iav5y")
+tonemap_mode = 3
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_min_cell_size = 0.21484375
+sdfgi_y_scale = 2
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.70153177, 0.74610776, 0.803574, 1)
+
+[sub_resource type="Animation" id="Animation_754fn"]
+resource_name = "reset"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:environment:background_mode")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:environment:volumetric_fog_enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:environment:volumetric_fog_density")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.05]
+}
+
+[sub_resource type="Animation" id="Animation_bvt00"]
+resource_name = "sky"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:environment:background_mode")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:environment:volumetric_fog_enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 13.459553, 15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:environment:volumetric_fog_density")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.05, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:environment:sky:sky_material:sky_energy_multiplier")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0666666),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bvt00"]
+_data = {
+&"reset": SubResource("Animation_754fn"),
+&"sky": SubResource("Animation_bvt00")
+}
+
+[node name="Level" type="Node3D" unique_id=1488230902]
+
+[node name="AtmosphereSounds" type="Node" parent="." unique_id=1200311374 node_paths=PackedStringArray("current")]
+script = ExtResource("1_6phgx")
+current = NodePath("base")
+metadata/_custom_type_script = "uid://cl0sagoc6n14c"
+
+[node name="base" type="AudioStreamPlayer" parent="AtmosphereSounds" unique_id=30244655]
+stream = ExtResource("2_6phgx")
+
+[node name="3e7b3c24cee900d" type="AudioStreamPlayer" parent="AtmosphereSounds" unique_id=6851887]
+stream = ExtResource("1_k5f4k")
+
+[node name="Sounds" type="Node" parent="." unique_id=2128896299]
+
+[node name="Light" type="Node" parent="." unique_id=1591351862]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Light" unique_id=741743229]
+environment = SubResource("Environment_3mhv4")
+script = ExtResource("4_0f350")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Light/WorldEnvironment" unique_id=1218070981]
+libraries/ = SubResource("AnimationLibrary_bvt00")
+autoplay = &"reset"
+
+[node name="Background" type="Node" parent="." unique_id=919741197]
+
+[node name="Props" type="Node" parent="." unique_id=68397599]
+script = ExtResource("5_bvt00")
+
+[node name="Components" type="Node" parent="." unique_id=360484998]
+
+[node name="LevelComponent" type="Node" parent="." unique_id=1845701943]
+
+[node name="Player" parent="." unique_id=107747127 node_paths=PackedStringArray("menu") instance=ExtResource("1_n0qsc")]
+menu = NodePath("../UI")
+
+[node name="Path" type="Node" parent="." unique_id=767081660]
+script = ExtResource("5_wqkje")
+
+[node name="Node" type="Node" parent="." unique_id=1585541803]
+
+[node name="UI" type="Control" parent="." unique_id=1920774469 node_paths=PackedStringArray("player")]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("7_8c0lf")
+player = NodePath("../Player")
+
+[node name="Control" type="Control" parent="UI" unique_id=2133251018]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="UI/Control" unique_id=552986977]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Control" unique_id=676634475]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MainMenu" type="TextureButton" parent="UI/Control/VBoxContainer" unique_id=1602427281]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+texture_normal = ExtResource("10_ha31o")
+texture_pressed = ExtResource("10_ha31o")
+texture_hover = ExtResource("9_qxfql")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="UI/Control/VBoxContainer/MainMenu" unique_id=334993187]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -95.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Главное меню"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings" type="TextureButton" parent="UI/Control/VBoxContainer" unique_id=1031136662]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+texture_normal = ExtResource("10_ha31o")
+texture_pressed = ExtResource("10_ha31o")
+texture_hover = ExtResource("11_ha31o")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="UI/Control/VBoxContainer/Settings" unique_id=593225039]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -95.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Настройки"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Continio" type="TextureButton" parent="UI/Control/VBoxContainer" unique_id=1710258642]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+texture_normal = ExtResource("10_ha31o")
+texture_pressed = ExtResource("10_ha31o")
+texture_hover = ExtResource("11_ha31o")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="UI/Control/VBoxContainer/Continio" unique_id=905168178]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -95.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Продолжить игру"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingsMenu" type="Control" parent="UI" unique_id=497514392]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="UI/SettingsMenu" unique_id=315269658]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -286.0
+offset_top = 30.0
+offset_right = 286.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="UI/SettingsMenu/Control" unique_id=1810769836]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VScrollBar" type="ScrollContainer" parent="UI/SettingsMenu/Control/Panel" unique_id=173226031]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/SettingsMenu/Control/Panel/VScrollBar" unique_id=1327887443]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer" unique_id=1858042368]
+layout_mode = 2
+text = "Настройки геймплея"
+horizontal_alignment = 1
+
+[node name="GameSettings" type="HSeparator" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer" unique_id=153742019]
+layout_mode = 2
+
+[node name="Camera" type="HBoxContainer" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer" unique_id=1563022613]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/Camera" unique_id=1753444990]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Сглаживание движений камеры"
+
+[node name="SmoothCamera" type="CheckButton" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/Camera" unique_id=1538612728]
+layout_mode = 2
+button_pressed = true
+
+[node name="Air" type="Label" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer" unique_id=548998365]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer" unique_id=403611005]
+layout_mode = 2
+text = "Настройки графики"
+horizontal_alignment = 1
+
+[node name="GraphicSettings" type="HSeparator" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer" unique_id=61780490]
+layout_mode = 2
+
+[node name="SSR" type="HBoxContainer" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer" unique_id=1506662236]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/SSR" unique_id=1952485719]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Отражения в экранном пространстве(SSR)"
+
+[node name="SSR" type="CheckButton" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/SSR" unique_id=870869463]
+layout_mode = 2
+button_pressed = true
+
+[node name="SSAO" type="HBoxContainer" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer" unique_id=422710988]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/SSAO" unique_id=1605961914]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Экранное затенение(SSAO)"
+
+[node name="SSAO" type="CheckButton" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/SSAO" unique_id=1825107467]
+layout_mode = 2
+button_pressed = true
+
+[node name="SSIL" type="HBoxContainer" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer" unique_id=592879604]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/SSIL" unique_id=944520493]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Непрямое освещение(SSIL)"
+
+[node name="SSIL" type="CheckButton" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/SSIL" unique_id=1287801603]
+layout_mode = 2
+button_pressed = true
+
+[node name="SDFGI" type="HBoxContainer" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer" unique_id=632666980]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/SDFGI" unique_id=1921780378]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Глобальное освещение(SDFGI)"
+
+[node name="SDFGI" type="OptionButton" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/SDFGI" unique_id=1556905464]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+selected = 2
+item_count = 3
+popup/item_0/text = "Отключен"
+popup/item_0/id = 0
+popup/item_1/text = "Скорость"
+popup/item_1/id = 1
+popup/item_2/text = "Качество"
+popup/item_2/id = 2
+
+[node name="Glow" type="HBoxContainer" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer" unique_id=1649455621]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/Glow" unique_id=459420111]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Красивое свечение"
+
+[node name="Glow" type="CheckButton" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/Glow" unique_id=904399830]
+layout_mode = 2
+button_pressed = true
+
+[node name="VolumetricFog" type="HBoxContainer" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer" unique_id=2085197184]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/VolumetricFog" unique_id=1634823061]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Обьёмный туман"
+
+[node name="VolumetricFog" type="CheckButton" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/VolumetricFog" unique_id=328229148]
+layout_mode = 2
+button_pressed = true
+
+[node name="Props" type="HBoxContainer" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer" unique_id=1391352314]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/Props" unique_id=1175672138]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Пропсы"
+
+[node name="PropsButton" type="CheckButton" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/Props" unique_id=498120273]
+layout_mode = 2
+button_pressed = true
+
+[node name="MSAA" type="HBoxContainer" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer" unique_id=834962660]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/MSAA" unique_id=1477336943]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Сглаживание изображения(MSAA)"
+
+[node name="MSAA" type="OptionButton" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/MSAA" unique_id=464707380]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+selected = 3
+item_count = 4
+popup/item_0/text = "Отключен"
+popup/item_0/id = 0
+popup/item_1/text = "2x"
+popup/item_1/id = 1
+popup/item_2/text = "4x"
+popup/item_2/id = 2
+popup/item_3/text = "8x"
+popup/item_3/id = 3
+
+[node name="Shadows" type="HBoxContainer" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer" unique_id=640117808]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/Shadows" unique_id=473267004]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Тени"
+
+[node name="Shadows" type="OptionButton" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/Shadows" unique_id=2079140369]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+selected = 2
+item_count = 3
+popup/item_0/text = "Скорость"
+popup/item_0/id = 0
+popup/item_1/text = "Баланс"
+popup/item_1/id = 1
+popup/item_2/text = "Качество"
+popup/item_2/id = 2
+
+[node name="Air2" type="Label" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer" unique_id=1778532972]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer" unique_id=843609280]
+layout_mode = 2
+text = "Масштабирование изображения"
+horizontal_alignment = 1
+
+[node name="GraphicSettings2" type="HSeparator" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer" unique_id=2043174372]
+layout_mode = 2
+
+[node name="ScaleMode" type="HBoxContainer" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer" unique_id=1357522394]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/ScaleMode" unique_id=615498976]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Метод масштабирования"
+
+[node name="ScaleMode" type="OptionButton" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/ScaleMode" unique_id=826331998]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "Линейный(скорость)"
+popup/item_0/id = 0
+popup/item_1/text = "FSR2(качество)"
+popup/item_1/id = 1
+
+[node name="ScaleMode2" type="HBoxContainer" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer" unique_id=1719743548]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/ScaleMode2" unique_id=1588570931]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Режим масштабирования"
+
+[node name="ScaleMode2" type="OptionButton" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/ScaleMode2" unique_id=1562824511]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Качество"
+popup/item_0/id = 0
+popup/item_1/text = "Баланс"
+popup/item_1/id = 1
+popup/item_2/text = "Скорость"
+popup/item_2/id = 2
+
+[node name="Control" type="Control" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer" unique_id=787753740]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Back2" type="Button" parent="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/Control" unique_id=1407491180]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -79.0
+offset_right = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Назад"
+
+[node name="Logo" parent="." unique_id=143674085 instance=ExtResource("8_754fn")]
+
+[connection signal="pressed" from="UI/Control/VBoxContainer/MainMenu" to="UI" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="UI/Control/VBoxContainer/Settings" to="UI" method="_on_settings_pressed"]
+[connection signal="pressed" from="UI/Control/VBoxContainer/Continio" to="UI" method="_on_continio_pressed"]
+[connection signal="pressed" from="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/Camera/SmoothCamera" to="UI" method="_on_smooth_camera_pressed"]
+[connection signal="pressed" from="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/SSR/SSR" to="UI" method="_on_ssr_pressed"]
+[connection signal="pressed" from="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/SSAO/SSAO" to="UI" method="_on_ssao_pressed"]
+[connection signal="pressed" from="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/SSIL/SSIL" to="UI" method="_on_ssil_pressed"]
+[connection signal="item_selected" from="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/SDFGI/SDFGI" to="UI" method="_on_sdfgi_item_selected"]
+[connection signal="pressed" from="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/Glow/Glow" to="UI" method="_on_glow_pressed"]
+[connection signal="pressed" from="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/VolumetricFog/VolumetricFog" to="UI" method="_on_volumetric_fog_pressed"]
+[connection signal="pressed" from="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/Props/PropsButton" to="UI" method="_on_props_button_pressed"]
+[connection signal="item_selected" from="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/MSAA/MSAA" to="UI" method="_on_msaa_item_selected"]
+[connection signal="item_selected" from="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/Shadows/Shadows" to="UI" method="_on_shadows_item_selected"]
+[connection signal="item_selected" from="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/ScaleMode/ScaleMode" to="UI" method="_on_scale_mode_item_selected"]
+[connection signal="item_selected" from="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/ScaleMode2/ScaleMode2" to="UI" method="_on_scale_mode_2_item_selected"]
+[connection signal="pressed" from="UI/SettingsMenu/Control/Panel/VScrollBar/VBoxContainer/Control/Back2" to="UI" method="_on_back_2_pressed"]

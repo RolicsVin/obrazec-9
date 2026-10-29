@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cbj1ewcb1dpqc"]
+
+[ext_resource type="Script" uid="uid://dnm2uf1l1x2l7" path="res://Data/Classes/gun.gd" id="1_44g8i"]
+[ext_resource type="PackedScene" uid="uid://caf4m08v10ht8" path="res://Assets/Objects/Gun/bullet.tscn" id="2_ob277"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kt0ak"]
+
+[node name="Gun" type="Node3D" unique_id=26377642 node_paths=PackedStringArray("timer")]
+script = ExtResource("1_44g8i")
+bullet = ExtResource("2_ob277")
+dir = Vector3(-0.05, 0, 0)
+timer = NodePath("Timer")
+metadata/_custom_type_script = "uid://dnm2uf1l1x2l7"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=913021844]
+transform = Transform3D(-8.305164e-09, 0.19, -8.305164e-09, 0, -8.305164e-09, -0.19, -0.19, -8.305164e-09, 3.6303022e-16, 0, 0, 0)
+mesh = SubResource("CylinderMesh_kt0ak")
+
+[node name="Timer" type="Timer" parent="." unique_id=335399746]

@@ -1,0 +1,365 @@
+[gd_scene format=3 uid="uid://bs8nuceygn4xc"]
+
+[ext_resource type="Script" uid="uid://ibxav3sxt56t" path="res://Assets/Player/camera_3d.gd" id="1_5j20w"]
+[ext_resource type="Script" uid="uid://bsa8ga0ltdt3s" path="res://Data/Classes/Player.gd" id="1_61lih"]
+[ext_resource type="AudioStream" uid="uid://bm1ua3qfpuk4n" path="res://Assets/Player/dead1.mp3" id="2_8ft5u"]
+[ext_resource type="ArrayMesh" uid="uid://w05062t2cc7h" path="res://Assets/Models/Character/mesh/Основная_character.res" id="2_kg0wl"]
+[ext_resource type="AudioStream" uid="uid://deg8fmdgkdl0r" path="res://Assets/Player/dead2.mp3" id="3_5jfoa"]
+[ext_resource type="AudioStream" uid="uid://lvegstit2b3u" path="res://Assets/Player/walk.mp3" id="4_5jfoa"]
+[ext_resource type="PackedScene" uid="uid://bblmc4ix4ygg5" path="res://Scenes/logo.tscn" id="7_rul8u"]
+[ext_resource type="AnimationLibrary" uid="uid://cf1f8tjlal0dj" path="res://Assets/Models/Character/animations/player_animations.res" id="8_kg0wl"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_61lih"]
+friction = 0.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5j20w"]
+streams_count = 2
+stream_0/stream = ExtResource("2_8ft5u")
+stream_1/stream = ExtResource("3_5jfoa")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hf7dp"]
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_kg0wl"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m3gky"]
+animation = &"player_animations/compression"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_funjf"]
+animation = &"player_animations/compression_walk"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_so11v"]
+animation = &"player_animations/compression_walk"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wt21t"]
+animation = &"player_animations/compression_walk"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_80x61"]
+animation = &"player_animations/compression_walk"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_2147b"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_m3gky")
+blend_point_0/pos = Vector2(0, 0)
+blend_point_0/name = &"player_animations_compression"
+blend_point_1/node = SubResource("AnimationNodeAnimation_funjf")
+blend_point_1/pos = Vector2(0, 1)
+blend_point_1/name = &"player_animations_compression_walk"
+blend_point_2/node = SubResource("AnimationNodeAnimation_so11v")
+blend_point_2/pos = Vector2(0, -1)
+blend_point_2/name = &"player_animations_compression_walk 2"
+blend_point_3/node = SubResource("AnimationNodeAnimation_wt21t")
+blend_point_3/pos = Vector2(1, 0)
+blend_point_3/name = &"player_animations_compression_walk 3"
+blend_point_4/node = SubResource("AnimationNodeAnimation_80x61")
+blend_point_4/pos = Vector2(-1, 0)
+blend_point_4/name = &"player_animations_compression_walk 4"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kg0wl"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_csact"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_funjf"]
+states/Compression/node = SubResource("AnimationNodeBlendSpace2D_2147b")
+states/Compression/position = Vector2(544, 100)
+transitions = ["Compression", "End", SubResource("AnimationNodeStateMachineTransition_kg0wl"), "Start", "Compression", SubResource("AnimationNodeStateMachineTransition_csact")]
+graph_offset = Vector2(-187, -48)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kg0wl"]
+animation = &"player_animations/state"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2147b"]
+animation = &"player_animations/flying_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_csact"]
+animation = &"player_animations/fly_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e6xfg"]
+animation = &"player_animations/moving"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fx6gu"]
+animation = &"player_animations/moving"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cdil5"]
+animation = &"player_animations/fly_up_site"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tfsyo"]
+animation = &"player_animations/fly_up_site"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rf7nh"]
+animation = &"player_animations/fly_down_site"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wv4rg"]
+animation = &"player_animations/fly_down_site"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_kg0wl"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_kg0wl")
+blend_point_0/pos = Vector2(0, 0)
+blend_point_0/name = &"player_animations_state"
+blend_point_1/node = SubResource("AnimationNodeAnimation_2147b")
+blend_point_1/pos = Vector2(1, 0)
+blend_point_1/name = &"player_animations_flying_up"
+blend_point_2/node = SubResource("AnimationNodeAnimation_csact")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_2/name = &"player_animations_fly_down"
+blend_point_3/node = SubResource("AnimationNodeAnimation_e6xfg")
+blend_point_3/pos = Vector2(0, -1)
+blend_point_3/name = &"player_animations_moving"
+blend_point_4/node = SubResource("AnimationNodeAnimation_fx6gu")
+blend_point_4/pos = Vector2(0, 1)
+blend_point_4/name = &"player_animations_moving 2"
+blend_point_5/node = SubResource("AnimationNodeAnimation_cdil5")
+blend_point_5/pos = Vector2(1, 1)
+blend_point_5/name = &"player_animations_fly_up_site"
+blend_point_6/node = SubResource("AnimationNodeAnimation_tfsyo")
+blend_point_6/pos = Vector2(1, -1)
+blend_point_6/name = &"player_animations_fly_up_site 2"
+blend_point_7/node = SubResource("AnimationNodeAnimation_rf7nh")
+blend_point_7/pos = Vector2(-1, -1)
+blend_point_7/name = &"player_animations_fly_down_site"
+blend_point_8/node = SubResource("AnimationNodeAnimation_wv4rg")
+blend_point_8/pos = Vector2(-1, 1)
+blend_point_8/name = &"player_animations_fly_down_site 2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2147b"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_kg0wl"]
+states/Moving/node = SubResource("AnimationNodeBlendSpace2D_kg0wl")
+states/Moving/position = Vector2(563, 100)
+transitions = ["Start", "Moving", SubResource("AnimationNodeStateMachineTransition_2147b")]
+graph_offset = Vector2(-173, -1)
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_cdil5"]
+graph_offset = Vector2(-409, 6)
+nodes/output/position = Vector2(260, 160)
+nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_kg0wl")
+nodes/StateMachine/position = Vector2(-540, 100)
+nodes/OneShot/node = SubResource("AnimationNodeOneShot_kg0wl")
+nodes/OneShot/position = Vector2(-114.30934, 129.34299)
+nodes/OneShotAnimations/node = SubResource("AnimationNodeStateMachine_funjf")
+nodes/OneShotAnimations/position = Vector2(-540, 300)
+node_connections = [&"output", 0, &"OneShot", &"OneShot", 0, &"StateMachine", &"OneShot", 1, &"OneShotAnimations"]
+
+[sub_resource type="GDScript" id="GDScript_kg0wl"]
+script/source = "extends Control
+
+
+func _on_button_2_pressed() -> void:
+	$\"..\".menu.show()
+	$Button2.hide()
+
+
+func _on_button_3_pressed() -> void:
+	Input.action_press(\"E\")
+	await get_tree().process_frame
+	Input.action_release(\"E\")
+"
+
+[node name="Player" type="RigidBody3D" unique_id=107747127 node_paths=PackedStringArray("camera", "colision", "animation_player", "animation_tree", "ground_cast", "ground_cast2", "roof_cast", "roof_cast2", "anim_cast", "sound_walk", "dead_sound", "logo", "mesh", "menu_button") groups=["Player"]]
+collision_layer = 3
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_61lih")
+gravity_scale = 2.0
+script = ExtResource("1_61lih")
+camera = NodePath("Camera3D")
+jump_force = 10.0
+colision = NodePath("CollisionShape3D2")
+animation_player = NodePath("AnimationPlayer")
+animation_tree = NodePath("AnimationTree")
+ground_cast = NodePath("CollisionShape3D2/RayCast3D")
+ground_cast2 = NodePath("CollisionShape3D2/RayCast3D4")
+roof_cast = NodePath("CollisionShape3D2/RayCast3D2")
+roof_cast2 = NodePath("CollisionShape3D2/RayCast3D5")
+anim_cast = NodePath("CollisionShape3D2/RayCast3D3")
+sound_walk = NodePath("Walk")
+dead_sound = NodePath("Dead")
+logo = NodePath("UI/Logo")
+mesh = NodePath("Character")
+menu_button = NodePath("UI/Button2")
+metadata/_custom_type_script = "uid://bsa8ga0ltdt3s"
+
+[node name="Character" type="MeshInstance3D" parent="." unique_id=947179880]
+transform = Transform3D(-3.3220655e-08, 0, -0.76, 0, 0.76, 0, 0.76, 0, -3.3220655e-08, 0, 0, 0)
+mesh = ExtResource("2_kg0wl")
+blend_shapes/walk = 0.004291773
+blend_shapes/CloseEyes = 0.0
+blend_shapes/turbulence = 0.0
+blend_shapes/turbulence1 = 0.0
+blend_shapes/turbulence2 = 0.0
+blend_shapes/turbulence3 = 0.0
+blend_shapes/turbulence4 = 0.0
+blend_shapes/turbulence5 = 0.0
+blend_shapes/turbulence6 = 0.0
+blend_shapes/turbulence7 = 0.9777403
+blend_shapes/turbulence8 = 0.022259714
+blend_shapes/turbulence9 = 0.0
+blend_shapes/turbulence10 = 0.0
+blend_shapes/fly_up = 0.0008482337
+blend_shapes/fly_up_site = 0.0
+blend_shapes/fly_down = 0.0
+blend_shapes/fly_down_site = 0.0
+blend_shapes/Compression = 0.0
+blend_shapes/hitting_the_ceiling = 0.0
+"blend_shapes/landing_on_the ground" = 0.0
+blend_shapes/big_eyes = 0.619718
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=997062793]
+transform = Transform3D(1, 0, 0, 0, 0.97494787, 0.22243342, 0, -0.22243342, 0.97494787, 0, 1.3995843, 7)
+current = true
+script = ExtResource("1_5j20w")
+target_offset = Vector3(0, 1.4, 7)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=653382843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47322172, 0)
+light_color = Color(1, 1, 0, 1)
+omni_range = 4.0
+
+[node name="Dead" type="AudioStreamPlayer3D" parent="." unique_id=787317552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47322172, 0)
+stream = SubResource("AudioStreamRandomizer_5j20w")
+
+[node name="Walk" type="AudioStreamPlayer3D" parent="." unique_id=112981120]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47322172, 0)
+stream = ExtResource("4_5jfoa")
+volume_db = -10.0
+autoplay = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1794659931]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5003104, 0)
+shape = SubResource("SphereShape3D_hf7dp")
+
+[node name="RayCast3D" type="RayCast3D" parent="CollisionShape3D2" unique_id=7932155]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.263999, -0.033215612, 0)
+target_position = Vector3(0, -0.565, 0)
+
+[node name="RayCast3D4" type="RayCast3D" parent="CollisionShape3D2" unique_id=717112603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27618384, -0.033215612, 0)
+target_position = Vector3(0, -0.565, 0)
+
+[node name="RayCast3D2" type="RayCast3D" parent="CollisionShape3D2" unique_id=1860816870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25707358, 0.04777193, 0)
+target_position = Vector3(0, 0.565, 0)
+
+[node name="RayCast3D5" type="RayCast3D" parent="CollisionShape3D2" unique_id=1707100799]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26880038, 0.04777193, 0)
+target_position = Vector3(0, 0.565, 0)
+
+[node name="RayCast3D3" type="RayCast3D" parent="CollisionShape3D2" unique_id=25023876]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.329448, 0)
+target_position = Vector3(0, 0.7, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1926284132]
+libraries/player_animations = ExtResource("8_kg0wl")
+autoplay = &"player_animations/state"
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1442405656]
+tree_root = SubResource("AnimationNodeBlendTree_cdil5")
+anim_player = NodePath("../AnimationPlayer")
+parameters/StateMachine/Moving/blend_position = Vector2(0.0012755394, 0.004291773)
+parameters/OneShot/active = false
+parameters/OneShot/internal_active = false
+parameters/OneShot/request = 0
+parameters/OneShotAnimations/Compression/blend_position = Vector2(-0.48596936, -0.007042289)
+
+[node name="UI" type="Control" parent="." unique_id=1902472651]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = SubResource("GDScript_kg0wl")
+
+[node name="Logo" parent="UI" unique_id=143674085 instance=ExtResource("7_rul8u")]
+layout_mode = 1
+
+[node name="Label" type="Label" parent="UI" unique_id=1365691137]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label2" type="Label" parent="UI" unique_id=1976646356]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VirtualJoystick" type="VirtualJoystick" parent="UI" unique_id=1406355467]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -362.0
+offset_right = 364.0
+offset_bottom = -32.0
+grow_vertical = 0
+joystick_size = 331.0
+tip_size = 171.0
+action_up = &""
+
+[node name="Button" type="Button" parent="UI" unique_id=226057618]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -283.0
+offset_top = -276.0
+offset_right = -84.0
+offset_bottom = -77.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "⬆️"
+
+[node name="Button3" type="Button" parent="UI" unique_id=1527883206]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -523.0
+offset_top = -276.0
+offset_right = -324.0
+offset_bottom = -77.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "E"
+
+[node name="Button2" type="Button" parent="UI" unique_id=592742356]
+visible = false
+layout_mode = 1
+offset_right = 199.0
+offset_bottom = 199.0
+theme_override_font_sizes/font_size = 32
+text = "Меню"
+
+[connection signal="flicked" from="UI/VirtualJoystick" to="." method="_on_virtual_joystick_flicked"]
+[connection signal="pressed" from="UI/Button" to="." method="jump"]
+[connection signal="pressed" from="UI/Button3" to="UI" method="_on_button_3_pressed"]
+[connection signal="pressed" from="UI/Button2" to="UI" method="_on_button_2_pressed"]

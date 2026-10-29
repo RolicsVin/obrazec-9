@@ -1,0 +1,22 @@
+# Blender 5.1.1 MTL File: 'Character.blend'
+# www.blender.org
+
+newmtl CharacterMaterial
+Ns 576.219055
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 0.581818
+illum 9
+map_Kd D:/Godot/образец-номер-9/Assets/Models/Textures_Charaster/Base_color.png
+
+newmtl Eyes
+Ns 569.338745
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.400000
+d 0.586364
+illum 9
+map_Kd textures/Character_CharacterMaterial_BaseColor.png

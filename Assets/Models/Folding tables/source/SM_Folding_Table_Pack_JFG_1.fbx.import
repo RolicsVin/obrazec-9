@@ -1,0 +1,121 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://ctnfvcyutfa28"
+path="res://.godot/imported/SM_Folding_Table_Pack_JFG_1.fbx-55c91be8aa57af4a25610aec5fecb335.scn"
+
+[deps]
+
+source_file="res://Assets/Models/Folding tables/source/SM_Folding_Table_Pack_JFG_1.fbx"
+dest_files=["res://.godot/imported/SM_Folding_Table_Pack_JFG_1.fbx-55c91be8aa57af4a25610aec5fecb335.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+mesh_library/use_node_names_as_mesh_names=false
+array_mesh/deduplicate_surfaces=true
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"M_Folding_Table_JFG_1": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Assets/Models/Folding tables/source/M_Folding_Table_JFG_1.tres",
+"use_external/path": "uid://bwdbt125d72ri"
+},
+"M_Folding_Table_JFG_2": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Assets/Models/Folding tables/source/M_Folding_Table_JFG_2.tres",
+"use_external/path": "uid://dn0d2ffkk8ki8"
+},
+"M_Folding_Table_JFG_3": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Assets/Models/Folding tables/source/M_Folding_Table_JFG_3.tres",
+"use_external/path": "uid://dxpn0ybafk0uk"
+},
+"M_Folding_Table_JFG_4": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Assets/Models/Folding tables/source/M_Folding_Table_JFG_4.tres",
+"use_external/path": "uid://buapbnrfuuixu"
+},
+"M_Folding_Table_JFG_5": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Assets/Models/Folding tables/source/M_Folding_Table_JFG_5.tres",
+"use_external/path": "uid://cn402xa41as0t"
+}
+},
+"meshes": {
+"Cube_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Assets/Models/Folding tables/source/Cube_001.res",
+"save_to_file/path": "uid://bba6kb2y44axw"
+},
+"Cube_002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Assets/Models/Folding tables/source/Cube_002.res",
+"save_to_file/path": "uid://bctsse3nmf2jb"
+},
+"Cube_003": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Assets/Models/Folding tables/source/Cube_003.res",
+"save_to_file/path": "uid://bfkpax8h8yqy5"
+},
+"Cube_004": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Assets/Models/Folding tables/source/Cube_004.res",
+"save_to_file/path": "uid://cxtujsd0moedb"
+},
+"Cube_005": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Assets/Models/Folding tables/source/Cube_005.res",
+"save_to_file/path": "uid://cvu7iuf473pjx"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2

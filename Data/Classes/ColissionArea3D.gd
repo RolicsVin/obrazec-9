@@ -1,0 +1,1 @@
+class_name ColissionArea3D extends Area3D

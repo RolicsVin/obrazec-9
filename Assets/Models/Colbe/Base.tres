@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://caq0jcqa2jreb"]
+
+[ext_resource type="Texture2D" uid="uid://cr5my3grqybnn" path="res://Assets/Models/Colbe/модель (1)_DefaultMaterial_BaseColor.png" id="1_irirv"]
+[ext_resource type="Texture2D" uid="uid://doudnr8npqv4i" path="res://Assets/Models/Colbe/модель (1)_DefaultMaterial_Roughness.png" id="2_fxf2b"]
+
+[resource]
+resource_name = "Base"
+albedo_texture = ExtResource("1_irirv")
+roughness = 0.46
+roughness_texture = ExtResource("2_fxf2b")

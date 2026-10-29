@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://btxxrxbuqkbks"]
+
+[ext_resource type="Texture2D" uid="uid://dqfonnekpkmnl" path="res://Assets/Models/Platform/Корпус_baseColor.png" id="1_imsln"]
+
+[resource]
+resource_name = "LadderMaterial"
+albedo_texture = ExtResource("1_imsln")

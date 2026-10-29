@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://c25clicwo7b7l"]
+
+[ext_resource type="Texture2D" uid="uid://c3xvxsfgb32ny" path="res://icon.jpg" id="1_kkuuu"]
+[ext_resource type="Script" uid="uid://m43k1tgptoin" path="res://Scenes/load_game.gd" id="1_nlw8c"]
+[ext_resource type="Texture2D" uid="uid://duy34btptgis2" path="res://godot_logo.png" id="2_ypx42"]
+
+[sub_resource type="Animation" id="Animation_ypx42"]
+resource_name = "start"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GodotLogo:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 4, 6, 10, 11, 14.966666, 17, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameLogo:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 4, 6, 10, 14.966666, 17, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nlw8c"]
+_data = {
+&"start": SubResource("Animation_ypx42")
+}
+
+[sub_resource type="GDScript" id="GDScript_nlw8c"]
+resource_name = "label"
+script/source = "extends Label
+
+var started: bool = false
+
+
+func _input(event: InputEvent) -> void:
+	if Input and not started and not event is InputEventMouseMotion:
+		started = true
+		$AnimationPlayer.play('showw')
+"
+
+[sub_resource type="Animation" id="Animation_i8gfv"]
+resource_name = "h"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nlw8c"]
+resource_name = "showw"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i8gfv"]
+_data = {
+&"h": SubResource("Animation_i8gfv"),
+&"showw": SubResource("Animation_nlw8c")
+}
+
+[node name="LoadGame" type="Control" unique_id=1931930398]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nlw8c")
+
+[node name="GameLogo" type="TextureRect" parent="." unique_id=922781978]
+modulate = Color(1, 1, 1, 1.0497)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kkuuu")
+
+[node name="GodotLogo" type="TextureRect" parent="." unique_id=2005645366]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -227.5
+offset_top = -216.5
+offset_right = 227.5
+offset_bottom = 216.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ypx42")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1765218316]
+libraries/ = SubResource("AnimationLibrary_nlw8c")
+autoplay = &"start"
+
+[node name="Label" type="Label" parent="." unique_id=1179687880]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.0
+offset_top = 267.0
+offset_right = 151.0
+offset_bottom = 314.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Escape - пропустить заставку"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = SubResource("GDScript_nlw8c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label" unique_id=44864125]
+libraries/ = SubResource("AnimationLibrary_i8gfv")
+autoplay = &"h"

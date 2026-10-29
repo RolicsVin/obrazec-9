@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c7gnv6ot7db4f"]
+
+[resource]
+resource_name = "Water"
+albedo_color = Color(0.59607846, 0.827451, 1, 1)
+emission_enabled = true
+emission = Color(0.59775484, 0.827018, 1, 1)
+emission_energy_multiplier = 6.4

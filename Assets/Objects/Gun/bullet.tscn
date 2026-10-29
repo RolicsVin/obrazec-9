@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://caf4m08v10ht8"]
+
+[ext_resource type="Script" uid="uid://dm1esqbs7t8e5" path="res://Assets/Objects/Gun/bullet.gd" id="1_qotiq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_loxbw"]
+emission_enabled = true
+emission = Color(0.8425195, 0.7408152, 1.1551381e-06, 1)
+emission_energy_multiplier = 13.39
+
+[sub_resource type="SphereMesh" id="SphereMesh_loxbw"]
+material = SubResource("StandardMaterial3D_loxbw")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_loxbw"]
+radius = 0.09988763
+
+[node name="Bullet" type="Area3D" unique_id=665285097]
+script = ExtResource("1_qotiq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1521038652]
+transform = Transform3D(0.245, 0, 0, 0, 0.245, 0, 0, 0, 0.245, 0, 0, 0)
+mesh = SubResource("SphereMesh_loxbw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=744298408]
+shape = SubResource("SphereShape3D_loxbw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

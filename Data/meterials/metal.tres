@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dl0rk4ddv784n"]
+
+[ext_resource type="Texture2D" uid="uid://bttcatexrrvp3" path="res://Assets/Models/Exit_To_Level/тайловая текстура металла (1)/plane_divided_DefaultMaterial_BaseColor.png" id="1_l3fl6"]
+[ext_resource type="Texture2D" uid="uid://5xoudnnrtwe1" path="res://Assets/Models/Exit_To_Level/тайловая текстура металла (1)/plane_divided_DefaultMaterial_Roughness.png" id="2_15ihh"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_l3fl6")
+roughness_texture = ExtResource("2_15ihh")
+uv1_scale = Vector3(24.325, 24.325, 24.325)

@@ -1,0 +1,1867 @@
+[gd_scene format=3 uid="uid://3fkaf8djtk1h"]
+
+[ext_resource type="PackedScene" uid="uid://njdudchdwvy0" path="res://Scenes/level.tscn" id="1_24phs"]
+[ext_resource type="ArrayMesh" uid="uid://d32ev7an4ilet" path="res://Assets/Models/Ladder/LadderMesh.res" id="2_0fpmu"]
+[ext_resource type="Material" uid="uid://dl0rk4ddv784n" path="res://Data/meterials/metal.tres" id="2_pcft3"]
+[ext_resource type="PackedScene" uid="uid://c32md0isnnb5o" path="res://Assets/Objects/Block/block.tscn" id="2_ty1rc"]
+[ext_resource type="Texture2D" uid="uid://bttcatexrrvp3" path="res://Assets/Models/Exit_To_Level/тайловая текстура металла (1)/plane_divided_DefaultMaterial_BaseColor.png" id="3_4hiw1"]
+[ext_resource type="Script" uid="uid://8c24i1lml5dx" path="res://Data/Classes/mucus.gd" id="3_m135w"]
+[ext_resource type="PackedScene" uid="uid://ckprc1tcc288m" path="res://Assets/Objects/Ships/ships.tscn" id="3_p0prn"]
+[ext_resource type="ArrayMesh" uid="uid://b7pmpmmxw1o2l" path="res://Assets/Models/Walls/Куб.res" id="4_lr0ko"]
+[ext_resource type="Texture2D" uid="uid://5xoudnnrtwe1" path="res://Assets/Models/Exit_To_Level/тайловая текстура металла (1)/plane_divided_DefaultMaterial_Roughness.png" id="4_yy8on"]
+[ext_resource type="Script" uid="uid://u7u3dqeopabw" path="res://Data/Classes/SavePointl.gd" id="6_dj5hn"]
+[ext_resource type="PackedScene" uid="uid://dfoe0ep1lipjg" path="res://Assets/Objects/List/list.tscn" id="7_ojro4"]
+[ext_resource type="ArrayMesh" uid="uid://n0c7xc0l4vrw" path="res://Assets/Models/SmallTrash/Плоскость_006.res" id="8_dpe6j"]
+[ext_resource type="Script" uid="uid://d00diagj14xvf" path="res://Data/Classes/EndLevel.gd" id="8_xv7eh"]
+[ext_resource type="ArrayMesh" uid="uid://cxnnfq1vl7x7c" path="res://Assets/Models/Ladder/Colision.res" id="9_b3n1j"]
+[ext_resource type="Shape3D" uid="uid://cjtfjy1liye32" path="res://Assets/Models/Ladder/ladder_colision.tres" id="9_faulo"]
+[ext_resource type="ArrayMesh" uid="uid://mwuf4jbfexmq" path="res://Assets/Models/SmallTrash/Плоскость_004.res" id="9_m8ou3"]
+[ext_resource type="ArrayMesh" uid="uid://c8paoc6wwvuwx" path="res://Assets/Models/Wires/КриваяБезье_007.res" id="10_odihm"]
+[ext_resource type="ArrayMesh" uid="uid://b8tyrs0cpney0" path="res://Assets/Models/Fence/Цилиндр.res" id="11_vh8st"]
+[ext_resource type="ArrayMesh" uid="uid://cbs0bgwgpyp5h" path="res://Assets/Models/Walls/Куб_001.res" id="12_65ryg"]
+[ext_resource type="Material" uid="uid://bdsw8lidaddcc" path="res://Assets/Models/Platform/Body.tres" id="12_plkcr"]
+[ext_resource type="ArrayMesh" uid="uid://cws73gtkbj355" path="res://Assets/Models/Walls/Куб_002.res" id="13_4m3ey"]
+[ext_resource type="ArrayMesh" uid="uid://cfvq5kpjl0cpj" path="res://Assets/Models/Walls/Куб_003.res" id="14_lylsv"]
+[ext_resource type="Script" uid="uid://bf33aor6spn1n" path="res://Data/Classes/Platform.gd" id="16_ucg3d"]
+[ext_resource type="ArrayMesh" uid="uid://b1nw6htts6vnw" path="res://Assets/Models/Platform/Основная_платформа_(вариант_2)_001.res" id="17_fn86y"]
+[ext_resource type="ArrayMesh" uid="uid://b0smhk88gvcfb" path="res://Assets/Models/SmallTrash/Куб_001.res" id="20_plkcr"]
+[ext_resource type="ArrayMesh" uid="uid://bc1k4axjiugqb" path="res://Assets/Models/SmallTrash/Плоскость_007.res" id="21_odihm"]
+[ext_resource type="ArrayMesh" uid="uid://bjuyg6typp34p" path="res://Assets/Models/SmallTrash/Куб.res" id="21_ucg3d"]
+[ext_resource type="ArrayMesh" uid="uid://b22qpjua7o8ye" path="res://Assets/Models/SmallTrash/Плоскость_001.res" id="22_vh8st"]
+[ext_resource type="ArrayMesh" uid="uid://cxvgubdf1crv7" path="res://Assets/Models/SmallTrash/Плоскость.res" id="25_hhhfn"]
+[ext_resource type="ArrayMesh" uid="uid://hq0k7wxhjt4i" path="res://Assets/Models/Folding tables/Data/Cube_002.res" id="25_wqun2"]
+[ext_resource type="ArrayMesh" uid="uid://d16rpg07u4eej" path="res://Assets/Models/SmallTrash/Куб_002.res" id="26_wqun2"]
+[ext_resource type="ArrayMesh" uid="uid://cvk6bh1j6uqub" path="res://Assets/Models/Wires/КриваяБезье_003.res" id="27_x0bbt"]
+[ext_resource type="ArrayMesh" uid="uid://s3ge1p613skw" path="res://Assets/Models/SmallTrash/Плоскость_002.res" id="29_x0bbt"]
+[ext_resource type="ArrayMesh" uid="uid://cacblwsnp1kqn" path="res://Assets/Models/props/DoorMesh.res" id="30_04wwc"]
+[ext_resource type="ArrayMesh" uid="uid://bktmjlq4qhn02" path="res://Assets/Models/props/LampMesh_001.res" id="31_xghi6"]
+[ext_resource type="ArrayMesh" uid="uid://c84l76n8y2jpd" path="res://Assets/Models/props/WentMesh.res" id="32_vxfg6"]
+[ext_resource type="ArrayMesh" uid="uid://bk0ukbhp1pfau" path="res://Assets/Models/tower/TowerMesh.res" id="33_gvqsu"]
+[ext_resource type="ArrayMesh" uid="uid://c2t3q685ijflr" path="res://Assets/Models/Wires/КриваяБезье_005.res" id="34_sguyg"]
+[ext_resource type="ArrayMesh" uid="uid://dk0nsvg5p0wvi" path="res://Assets/Models/Wires/КриваяБезье_006.res" id="35_u5i6r"]
+[ext_resource type="ArrayMesh" uid="uid://cr4mxrtfu2526" path="res://Assets/Models/tower/TowerMesh_001.res" id="36_u5i6r"]
+[ext_resource type="ArrayMesh" uid="uid://bw1icrqwtfl84" path="res://Assets/Models/Wires/КриваяБезье.res" id="37_7c4p0"]
+[ext_resource type="ArrayMesh" uid="uid://cmofruuws3vl7" path="res://Assets/Models/Wires/КриваяБезье_001.res" id="38_ov00o"]
+[ext_resource type="ArrayMesh" uid="uid://eo73i42mtwsl" path="res://Assets/Models/Wires/КриваяБезье_002.res" id="39_ov00o"]
+[ext_resource type="ArrayMesh" uid="uid://4socnaxnsk5m" path="res://Assets/Models/Folding tables/source/Cube_001.res" id="40_70vth"]
+[ext_resource type="ArrayMesh" uid="uid://b0vwgt52ayx4n" path="res://Assets/Models/Computer/ComputerMesh.res" id="41_wx8uo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_24phs"]
+material = ExtResource("2_pcft3")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ty1rc"]
+size = Vector3(28.091675, 0.37109375, 3.649414)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ojro4"]
+size = Vector3(7.7139893, 0.37109375, 3.649414)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dj5hn"]
+size = Vector3(7.712372, 3.9938965, 3.649414)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p0prn"]
+size = Vector3(7.972534, 5.9799805, 3.649414)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcft3"]
+emission_enabled = true
+emission = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_p0prn"]
+material = SubResource("StandardMaterial3D_pcft3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lr0ko"]
+albedo_texture = ExtResource("3_4hiw1")
+roughness_texture = ExtResource("4_yy8on")
+uv1_scale = Vector3(34.38, 34.38, 34.38)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dj5hn"]
+material = SubResource("StandardMaterial3D_lr0ko")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vxfg6"]
+emission_enabled = true
+emission = Color(0, 0, 1, 1)
+emission_energy_multiplier = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70vth"]
+albedo_color = Color(0.18000486, 0.18000486, 0.18000486, 1)
+metallic = 1.0
+roughness = 0.19
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pcft3"]
+size = Vector3(1.2495117, 23.182007, 4.0908203)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ijnin"]
+size = Vector3(1.2495117, 8.428101, 3.5566406)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hhhfn"]
+size = Vector3(1.8029785, 0.26416016, 3.3486328)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xv7eh"]
+radius = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xv7eh"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_ijnin"]
+material = SubResource("StandardMaterial3D_xv7eh")
+text = "E"
+
+[sub_resource type="Animation" id="Animation_hhhfn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(26.177473, 19.607792, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5707964, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wqun2"]
+resource_name = "crush"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5707964, 0), Vector3(-0.5061455, 1.9722221, 0.70685834)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(26.177473, 19.607792, 0), Vector3(26.177473, 5.0864334, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_x0bbt"]
+resource_name = "stable"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(26.177473, 19.607792, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5707964, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_04wwc"]
+_data = {
+&"RESET": SubResource("Animation_hhhfn"),
+&"crush": SubResource("Animation_wqun2"),
+&"stable": SubResource("Animation_x0bbt")
+}
+
+[sub_resource type="GDScript" id="GDScript_x0bbt"]
+resource_name = "Anim"
+script/source = "extends AnimationPlayer
+
+
+func play_anim():
+	play(\"crush\")
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_plkcr"]
+size = Vector3(1.8029785, 0.26416016, 3.3486328)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fn86y"]
+size = Vector3(1.8029785, 0.18554688, 3.7353516)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_04wwc"]
+size = Vector3(1.8029785, 0.18554688, 6.713867)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m135w"]
+size = Vector3(1, 5.5203857, 4.198242)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ojro4"]
+radius = 1.7246041
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ijnin"]
+radius = 2.8404605
+
+[node name="Level" unique_id=1488230902 instance=ExtResource("1_24phs")]
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Light" parent_id_path=PackedInt32Array(1591351862) index="1" unique_id=896255518]
+transform = Transform3D(0.74898773, -0.11987065, 0.6516505, -0.66258377, -0.13550238, 0.73662883, 2.170184e-08, -0.98349905, -0.18091397, 4.6444016, 37.416252, 0)
+light_color = Color(0, 0.4509804, 1, 1)
+light_energy = 3.242
+light_volumetric_fog_energy = 15.158
+light_size = 1.0
+shadow_enabled = true
+spot_range = 10.42419
+spot_angle = 29.86275
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Light" parent_id_path=PackedInt32Array(1591351862) index="2" unique_id=1191229037]
+transform = Transform3D(0.8658159, 0.09052261, -0.49210626, 0.50036275, -0.1566382, 0.851529, -1.11753895e-08, -0.98349893, -0.18091398, 12.023098, 37.416252, 0)
+light_color = Color(0.80008465, 0.6637078, 0.4637606, 1)
+light_energy = 6.906
+light_volumetric_fog_energy = 7.101
+light_size = 1.0
+shadow_enabled = true
+spot_range = 8.381044
+spot_angle = 45.744568
+
+[node name="SpotLight3D10" type="SpotLight3D" parent="Light" parent_id_path=PackedInt32Array(1591351862) index="3" unique_id=597641791]
+transform = Transform3D(0.9900176, -0.025498724, 0.13861817, -0.14094388, -0.17910804, 0.9736813, -4.7245585e-09, -0.98349893, -0.180914, 23.379137, 37.762806, 0)
+light_color = Color(0.80008465, 0.6637078, 0.4637606, 1)
+light_energy = 6.906
+light_volumetric_fog_energy = 7.101
+light_size = 1.0
+shadow_enabled = true
+spot_range = 8.381044
+spot_angle = 45.744568
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Light" parent_id_path=PackedInt32Array(1591351862) index="4" unique_id=98500121]
+transform = Transform3D(0.9984544, 0.010054744, -0.0546605, 0.055577576, -0.18063436, 0.981979, -4.7245585e-09, -0.98349893, -0.18091398, 26.842106, 26.455606, 0)
+light_color = Color(0.80008465, 0.6637078, 0.4637606, 1)
+light_energy = 6.906
+light_volumetric_fog_energy = 7.101
+light_size = 1.0
+shadow_enabled = true
+spot_range = 8.381044
+spot_angle = 45.744568
+
+[node name="SpotLight3D9" type="SpotLight3D" parent="Light" parent_id_path=PackedInt32Array(1591351862) index="5" unique_id=9588799]
+transform = Transform3D(0.9984544, 0.010054757, -0.054660484, 0.055577576, -0.18063436, 0.9819788, -4.7245585e-09, -0.98349893, -0.18091398, 21.245625, 26.455606, 0)
+light_color = Color(0.80008465, 0.6637078, 0.4637606, 1)
+light_energy = 6.906
+light_volumetric_fog_energy = 7.101
+light_size = 1.0
+shadow_enabled = true
+spot_range = 8.381044
+spot_angle = 45.744568
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Light" parent_id_path=PackedInt32Array(1591351862) index="6" unique_id=1756178171]
+transform = Transform3D(0.5343678, 0.15291794, -0.83130455, 0.84525204, -0.09667461, 0.5255502, 9.38935e-09, -0.98349893, -0.180914, 5.8038607, 27.805891, 0)
+light_color = Color(0.9999997, 0.96027786, 0.80888385, 1)
+light_energy = 3.0
+light_volumetric_fog_energy = 2.818
+shadow_enabled = true
+spot_range = 9.63156
+spot_angle = 24.35624
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Light" parent_id_path=PackedInt32Array(1591351862) index="7" unique_id=89925455]
+transform = Transform3D(0.8660254, 0.45876366, -0.19883637, 0, 0.39767274, 0.9175273, 0.5, -0.794602, 0.34439468, 0, 0, 0)
+visible = false
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Light" parent_id_path=PackedInt32Array(1591351862) index="8" unique_id=393700765]
+transform = Transform3D(0.8660254, 0.45876366, -0.19883639, -0.4480098, 0.8885514, 0.09881109, 0.22200726, 0.0035077333, 0.9750387, 0, 0, 0)
+visible = false
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Light" parent_id_path=PackedInt32Array(1591351862) index="9" unique_id=355329828]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.128581, 25.196602, -2.3841858e-07)
+shadow_enabled = true
+omni_range = 3.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Light" parent_id_path=PackedInt32Array(1591351862) index="10" unique_id=384086118]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.67415655, 31.92937, 0)
+omni_range = 4.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Light" parent_id_path=PackedInt32Array(1591351862) index="11" unique_id=1386550771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3478026, 33.601406, 0)
+omni_range = 4.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Light" parent_id_path=PackedInt32Array(1591351862) index="12" unique_id=2069707627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.738112, 27.386242, 0)
+omni_range = 4.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="0" unique_id=1492750477]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 45.800964, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Background/StaticBody3D" index="0" unique_id=591818219]
+transform = Transform3D(28.089, 0, 0, 0, 7.7217646, 0, 0, 0, 3.605, 10.2542305, -3.6825218, 0)
+visible = false
+mesh = SubResource("BoxMesh_24phs")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Background/StaticBody3D" index="1" unique_id=773596424]
+transform = Transform3D(28.089, 0, 0, 0, 12.777, 0, 0, 0, 3.605, 10.2542305, 10.629099, 0)
+visible = false
+mesh = SubResource("BoxMesh_24phs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/StaticBody3D" index="2" unique_id=1652843973]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.255417, 0, 0)
+shape = SubResource("BoxShape3D_ty1rc")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Background/StaticBody3D" index="3" unique_id=665418273]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 24.135088, -3.695465, 0)
+shape = SubResource("BoxShape3D_ojro4")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="1" unique_id=12532247]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.964993, 30.974083, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/StaticBody3D3" index="0" unique_id=1184142646]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6765289, -1.8114014, 0)
+shape = SubResource("BoxShape3D_dj5hn")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="2" unique_id=1926908577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.25794, 33.026627, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Background/StaticBody3D4" index="0" unique_id=1569519839]
+transform = Transform3D(7.3508706, 0, 0, 0, 6.0084577, 0, 0, 0, 3.605, 5.5911465, -2.8766155, 0)
+visible = false
+mesh = SubResource("BoxMesh_24phs")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Background/StaticBody3D4" index="1" unique_id=446036965]
+transform = Transform3D(7.231262, 0, 0, 0, 4.0209785, 0, 0, 0, 3.605, 12.515745, -3.8806133, 0)
+visible = false
+mesh = SubResource("BoxMesh_24phs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/StaticBody3D4" index="2" unique_id=1852144441]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5757427, -2.8611336, 0)
+shape = SubResource("BoxShape3D_p0prn")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="3" unique_id=1547451092]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 32.01966, 44.674644, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Background/StaticBody3D2" index="0" unique_id=1271579808]
+transform = Transform3D(28.089, 0, 0, 0, 7.7217646, 0, 0, 0, 3.605, 0, 0.074373245, -0.016830444)
+visible = false
+mesh = SubResource("BoxMesh_24phs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/StaticBody3D2" index="1" unique_id=2091956454]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1035156e-05, 3.681211, 0)
+shape = SubResource("BoxShape3D_ty1rc")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Background/StaticBody3D2" index="2" unique_id=1189663510]
+transform = Transform3D(2.595, 0, 0, 0, 1.531, 0, 0, 0, 2.595, 0, 3.7266216, -0.9077499)
+mesh = SubResource("SphereMesh_p0prn")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Background/StaticBody3D2" index="3" unique_id=1267353757]
+transform = Transform3D(2.595, 0, 0, 0, 1.531, 0, 0, 0, 2.595, -3.6251984, 3.7266235, 0.6164677)
+mesh = SubResource("SphereMesh_p0prn")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Background/StaticBody3D2" index="4" unique_id=1829497125]
+transform = Transform3D(2.595, 0, 0, 0, 1.531, 0, 0, 0, 2.595, -4.7598686, 3.7266254, -0.37225866)
+mesh = SubResource("SphereMesh_p0prn")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Background/StaticBody3D2" index="5" unique_id=293671117]
+transform = Transform3D(2.595, 0, 0, 0, 1.531, 0, 0, 0, 2.595, -10.041618, 3.7266273, 0.5528207)
+mesh = SubResource("SphereMesh_p0prn")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Background/StaticBody3D2" index="6" unique_id=1400759683]
+transform = Transform3D(2.595, 0, 0, 0, 1.531, 0, 0, 0, 2.595, -11.10154, 3.7266293, -0.85912395)
+mesh = SubResource("SphereMesh_p0prn")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Background/StaticBody3D2" index="7" unique_id=112594026]
+transform = Transform3D(0.006250258, 1.5309955, 0, -2.5949924, 0.0036875326, 0, 0, 0, 2.5949998, -17.306952, 16.338306, -0.85912395)
+mesh = SubResource("SphereMesh_p0prn")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="Background/StaticBody3D2" index="8" unique_id=2065760702]
+transform = Transform3D(0.006250258, 1.5309955, 0, -2.5949924, 0.0036875326, 0, 0, 0, 2.5949998, -17.555744, 13.3385105, -0.85912395)
+mesh = SubResource("SphereMesh_p0prn")
+
+[node name="MeshInstance3D24" type="MeshInstance3D" parent="Background/StaticBody3D2" index="9" unique_id=2119672071]
+transform = Transform3D(0.006250258, 1.5309955, 0, -2.5949924, 0.0036875326, 0, 0, 0, 2.5949998, -17.555744, 17.942242, -0.85912395)
+mesh = SubResource("SphereMesh_p0prn")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="Background/StaticBody3D2" index="10" unique_id=513681415]
+transform = Transform3D(0.006250258, 1.5309955, 0, -2.5949924, 0.0036875326, 0, 0, 0, 2.5949998, -17.33377, 11.717817, 0.58049345)
+mesh = SubResource("SphereMesh_p0prn")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="Background/StaticBody3D2" index="11" unique_id=1088889185]
+transform = Transform3D(0.006250258, 1.5309955, 0, -2.5949924, 0.0036875326, 0, 0, 0, 2.5949998, -17.346134, 14.948252, 0.34737778)
+mesh = SubResource("SphereMesh_p0prn")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Background/StaticBody3D2" index="12" unique_id=2082232415]
+transform = Transform3D(2.595, 0, 0, 0, 1.531, 0, 0, 0, 2.595, -12.122856, 3.7266312, 0.42102313)
+mesh = SubResource("SphereMesh_p0prn")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Background/StaticBody3D2" index="13" unique_id=1475663435]
+transform = Transform3D(1.65, 0, 0, 0, 0.973, 0, 0, 0, 1.65, -7.7055054, 3.726633, -0.38461208)
+mesh = SubResource("SphereMesh_p0prn")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Background/StaticBody3D2" index="14" unique_id=63467803]
+transform = Transform3D(1.65, 0, 0, 0, 0.973, 0, 0, 0, 1.65, -7.170349, 3.726635, 0.1949358)
+mesh = SubResource("SphereMesh_p0prn")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Background/StaticBody3D2" index="15" unique_id=1942038762]
+transform = Transform3D(1.65, 0, 0, 0, 0.973, 0, 0, 0, 1.65, -2.1813278, 3.726637, -0.5425472)
+mesh = SubResource("SphereMesh_p0prn")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Background/StaticBody3D2" index="16" unique_id=874546402]
+transform = Transform3D(1.65, 0, 0, 0, 0.973, 0, 0, 0, 1.65, 0.9075432, 3.7266388, 0.38355112)
+mesh = SubResource("SphereMesh_p0prn")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Background/StaticBody3D2" index="17" unique_id=1651323422]
+transform = Transform3D(1.65, 0, 0, 0, 0.973, 0, 0, 0, 1.65, 1.8757133, 3.7266426, -0.16191614)
+mesh = SubResource("SphereMesh_p0prn")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="Background/StaticBody3D2" index="18" unique_id=1133597679]
+transform = Transform3D(2.595, 0, 0, 0, 1.531, 0, 0, 0, 2.595, 10.68853, 3.7266235, -0.9077499)
+mesh = SubResource("SphereMesh_p0prn")
+
+[node name="MeshInstance3D18" type="MeshInstance3D" parent="Background/StaticBody3D2" index="19" unique_id=1865323503]
+transform = Transform3D(2.595, 0, 0, 0, 1.531, 0, 0, 0, 2.595, 7.0633316, 3.7266254, 0.6164677)
+mesh = SubResource("SphereMesh_p0prn")
+
+[node name="MeshInstance3D19" type="MeshInstance3D" parent="Background/StaticBody3D2" index="20" unique_id=2124361378]
+transform = Transform3D(2.595, 0, 0, 0, 1.531, 0, 0, 0, 2.595, 5.9286613, 3.7266273, -0.37225866)
+mesh = SubResource("SphereMesh_p0prn")
+
+[node name="MeshInstance3D20" type="MeshInstance3D" parent="Background/StaticBody3D2" index="21" unique_id=1050810745]
+transform = Transform3D(1.65, 0, 0, 0, 0.973, 0, 0, 0, 1.65, 3.5181808, 3.726637, 0.1949358)
+mesh = SubResource("SphereMesh_p0prn")
+
+[node name="MeshInstance3D21" type="MeshInstance3D" parent="Background/StaticBody3D2" index="22" unique_id=1137924890]
+transform = Transform3D(1.65, 0, 0, 0, 0.973, 0, 0, 0, 1.65, 8.507202, 3.7266388, -0.5425472)
+mesh = SubResource("SphereMesh_p0prn")
+
+[node name="MeshInstance3D22" type="MeshInstance3D" parent="Background/StaticBody3D2" index="23" unique_id=1804201153]
+transform = Transform3D(1.65, 0, 0, 0, 0.973, 0, 0, 0, 1.65, 11.596073, 3.7266407, 0.38355112)
+mesh = SubResource("SphereMesh_p0prn")
+
+[node name="MeshInstance3D23" type="MeshInstance3D" parent="Background/StaticBody3D2" index="24" unique_id=932295073]
+transform = Transform3D(1.65, 0, 0, 0, 0.973, 0, 0, 0, 1.65, 12.564243, 3.7266445, -0.16191614)
+mesh = SubResource("SphereMesh_p0prn")
+
+[node name="StaticBody3D8" type="StaticBody3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="4" unique_id=660437733]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 32.01966, 17.26699, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Background/StaticBody3D8" index="0" unique_id=1626858593]
+transform = Transform3D(28.089, 0, 0, 0, 7.7217646, 0, 0, 0, 3.605, 0, 0.074373245, -0.016830444)
+visible = false
+mesh = SubResource("BoxMesh_24phs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/StaticBody3D8" index="1" unique_id=646824549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1035156e-05, 3.681211, 0)
+shape = SubResource("BoxShape3D_ty1rc")
+
+[node name="StaticBody3D9" type="StaticBody3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="5" unique_id=1475924483]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -10.450931, 4.1401596, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Background/StaticBody3D9" index="0" unique_id=1905701103]
+transform = Transform3D(28.089, 0, 0, 0, 7.7217646, 0, 0, 0, 3.605, 0, 0.074373245, -0.016830444)
+visible = false
+mesh = SubResource("BoxMesh_24phs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/StaticBody3D9" index="1" unique_id=895968891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1035156e-05, 3.681211, 0)
+shape = SubResource("BoxShape3D_ty1rc")
+
+[node name="StaticBody3D10" type="StaticBody3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="6" unique_id=1574621894]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -10.450931, 31.793423, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Background/StaticBody3D10" index="0" unique_id=2021152712]
+transform = Transform3D(28.089, 0, 0, 0, 7.7217646, 0, 0, 0, 3.605, 0, 0.074373245, -0.016830444)
+visible = false
+mesh = SubResource("BoxMesh_24phs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/StaticBody3D10" index="1" unique_id=625345257]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1035156e-05, 3.681211, 0)
+shape = SubResource("BoxShape3D_ty1rc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="7" unique_id=2084096565]
+transform = Transform3D(64.595, 0, 0, 0, -2.8235372e-06, -64.595, 0, 64.595, -2.8235372e-06, 14.641481, 15.175262, -1.7485645)
+mesh = SubResource("PlaneMesh_dj5hn")
+
+[node name="Block1" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="8" unique_id=729663523]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, -1.4368172, 43.980965, -0.11328602)
+mesh = ExtResource("4_lr0ko")
+
+[node name="Block5" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="9" unique_id=1142084918]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 6.448827, 43.980965, -0.11328602)
+mesh = ExtResource("4_lr0ko")
+
+[node name="Block2" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="10" unique_id=525650187]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 2.4925668, 43.980965, -0.11328602)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block31" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="11" unique_id=666961316]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, -5.4326344, 43.980965, -0.11328602)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block6" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="12" unique_id=86429934]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 14.391518, 43.980965, -0.11328602)
+mesh = ExtResource("4_lr0ko")
+
+[node name="Block7" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="13" unique_id=583816115]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 10.435258, 43.980965, -0.11328602)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block8" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="14" unique_id=1682393616]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 22.310858, 43.980965, -0.11328602)
+mesh = ExtResource("4_lr0ko")
+
+[node name="Block9" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="15" unique_id=499121370]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 18.354597, 43.980965, -0.11328602)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block40" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="16" unique_id=1354591848]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, 32.15967, 54.72359, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block41" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="17" unique_id=1927566745]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, 36.091793, 54.72359, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block42" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="18" unique_id=1705338450]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, 32.15967, 46.75905, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block43" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="19" unique_id=1385735181]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, 36.091793, 46.75905, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block44" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="20" unique_id=1262636931]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, 32.15967, 38.846836, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block45" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="21" unique_id=2143185350]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, 36.091793, 38.846836, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block46" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="22" unique_id=305991809]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, 32.15967, 30.940151, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block47" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="23" unique_id=1050901137]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, 36.091793, 30.940151, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block48" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="24" unique_id=636904973]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, 32.15967, 23.00914, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block49" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="25" unique_id=1861319236]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, 36.091793, 23.00914, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block50" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="26" unique_id=230139282]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, 32.15967, 15.080013, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block51" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="27" unique_id=1791299089]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, 36.091793, 15.080013, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block52" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="28" unique_id=800209823]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, 32.15967, 7.264345, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block53" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="29" unique_id=413238893]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, 36.091793, 7.264345, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block87" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="30" unique_id=1878839981]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, -6.523246, 41.56618, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block88" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="31" unique_id=1692378214]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, -6.523246, 33.60164, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block89" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="32" unique_id=1112225159]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, -6.523246, 25.689426, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block90" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="33" unique_id=210542928]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, -6.523246, 17.782742, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block91" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="34" unique_id=1370243202]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, -6.523246, 9.85173, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block92" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="35" unique_id=657427463]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, -6.523246, 1.9226036, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block93" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="36" unique_id=1597732126]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, -6.523246, -5.8930645, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block94" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="37" unique_id=1666226284]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, -10.362058, 41.56618, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block95" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="38" unique_id=678258007]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, -10.362058, 33.60164, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block96" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="39" unique_id=725926259]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, -10.362058, 25.689426, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block97" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="40" unique_id=616657545]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, -10.362058, 17.782742, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block98" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="41" unique_id=292374279]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, -10.362058, 9.85173, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block99" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="42" unique_id=1036636114]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, -10.362058, 1.9226036, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block100" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="43" unique_id=615912502]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, -10.362058, -5.8930645, -2.1558063)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block19" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="44" unique_id=1683005918]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, -1.4368172, 38.255074, -0.11328602)
+mesh = ExtResource("4_lr0ko")
+
+[node name="Block20" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="45" unique_id=88834769]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 6.448827, 38.255074, -0.11328602)
+mesh = ExtResource("4_lr0ko")
+
+[node name="Block21" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="46" unique_id=1981754744]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 2.4925668, 38.255074, -0.11328602)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block30" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="47" unique_id=1700206342]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, -5.382568, 38.255074, -0.11328602)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block22" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="48" unique_id=72853233]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 14.391518, 38.255074, -0.11328602)
+mesh = ExtResource("4_lr0ko")
+
+[node name="Block119" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="49" unique_id=1702233787]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, 28.212757, 35.065296, -5.6132493)
+mesh = ExtResource("4_lr0ko")
+
+[node name="Block120" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="50" unique_id=1851147044]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, 28.212757, 43.046677, -5.6132493)
+mesh = ExtResource("4_lr0ko")
+
+[node name="Block121" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="51" unique_id=193322357]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, 28.212757, 51.06489, -5.6132493)
+mesh = ExtResource("4_lr0ko")
+
+[node name="Block122" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="52" unique_id=5499038]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, 28.212757, 59.10334, -5.6132493)
+mesh = ExtResource("4_lr0ko")
+
+[node name="Block123" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="53" unique_id=855716538]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, 28.212757, -0.7549572, -5.6132493)
+mesh = ExtResource("4_lr0ko")
+
+[node name="Block124" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="54" unique_id=1737112503]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, 28.212757, 7.2264233, -5.6132493)
+mesh = ExtResource("4_lr0ko")
+
+[node name="Block125" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="55" unique_id=559550048]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, 28.212757, 15.244638, -5.6132493)
+mesh = ExtResource("4_lr0ko")
+
+[node name="Block126" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="56" unique_id=1202920495]
+transform = Transform3D(-1.7484555e-05, 0, -400, 0, 400, 0, 400, 0, -1.7484555e-05, 28.212757, 23.283087, -5.6132493)
+mesh = ExtResource("4_lr0ko")
+
+[node name="Block23" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="57" unique_id=907904777]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 10.435258, 38.255074, -0.11328602)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block101" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="58" unique_id=1548015517]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 12.207289, 31.287012, -3.4687185)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block102" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="59" unique_id=2105583156]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 16.172436, 31.287012, -3.4687185)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block103" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="60" unique_id=2053963076]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 20.132002, 31.287012, -3.4687185)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block104" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="61" unique_id=998000052]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 22.290636, 31.287012, -3.4687185)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block105" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="62" unique_id=1518172856]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 8.281103, 31.287012, -3.4687185)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block106" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="63" unique_id=1093620040]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 4.3041654, 31.287012, -3.4687185)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block107" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="64" unique_id=1662266372]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 0.3310629, 31.287012, -3.4687185)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block108" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="65" unique_id=201841196]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, -3.56686, 31.287012, -3.4687185)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block109" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="66" unique_id=1123371748]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, -7.581662, 31.287012, -3.4687185)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block110" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="67" unique_id=1287854972]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 12.207289, 27.051485, -3.4687185)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block111" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="68" unique_id=993554035]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 16.172436, 27.051485, -3.4687185)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block112" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="69" unique_id=1930318199]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 20.132002, 27.051485, -3.4687185)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block113" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="70" unique_id=1064893080]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 24.139946, 27.051485, -3.4687185)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block114" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="71" unique_id=1809740588]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 8.281103, 27.051485, -3.4687185)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block115" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="72" unique_id=733376709]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 4.3041654, 27.051485, -3.4687185)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block116" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="73" unique_id=1671454994]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 0.3310629, 27.051485, -3.4687185)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block117" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="74" unique_id=1406549819]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, -3.56686, 27.051485, -3.4687185)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block118" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="75" unique_id=2103059137]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, -7.581662, 27.051485, -3.4687185)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block24" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="76" unique_id=697871578]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 22.310858, 38.255074, -0.11328602)
+mesh = ExtResource("4_lr0ko")
+
+[node name="Block25" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="77" unique_id=1507289527]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 18.354597, 38.255074, -0.11328602)
+mesh = ExtResource("12_65ryg")
+
+[node name="Block3" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="78" unique_id=1819209085]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 22.775146, 29.156696, -0.18900931)
+mesh = ExtResource("13_4m3ey")
+
+[node name="Block10" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="79" unique_id=401543344]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 26.71608, 29.156696, -0.18900931)
+mesh = ExtResource("13_4m3ey")
+
+[node name="Block11" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="80" unique_id=544705713]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 18.79014, 29.156696, -0.18900931)
+mesh = ExtResource("13_4m3ey")
+
+[node name="Block26" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="81" unique_id=876959272]
+transform = Transform3D(-1.7484555e-05, 400, 1.7484555e-05, 0, -1.7484555e-05, 400, 400, 1.7484555e-05, 7.6427417e-13, 20.362125, 40.070328, -2.1592839)
+mesh = ExtResource("13_4m3ey")
+
+[node name="Block32" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="82" unique_id=491788086]
+transform = Transform3D(-1.7484555e-05, 400, 1.7484555e-05, 0, -1.7484555e-05, 400, 400, 1.7484555e-05, 7.6427417e-13, 20.272768, 50.03638, -2.1592839)
+mesh = ExtResource("13_4m3ey")
+
+[node name="Block33" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="83" unique_id=1856328647]
+transform = Transform3D(-1.7484555e-05, 400, 1.7484555e-05, 0, -1.7484555e-05, 400, 400, 1.7484555e-05, 7.6427417e-13, 12.329769, 50.03638, -2.1592839)
+mesh = ExtResource("13_4m3ey")
+
+[node name="Block34" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="84" unique_id=1129535256]
+transform = Transform3D(-1.7484555e-05, 400, 1.7484555e-05, 0, -1.7484555e-05, 400, 400, 1.7484555e-05, 7.6427417e-13, 4.4026384, 50.03638, -2.1592839)
+mesh = ExtResource("13_4m3ey")
+
+[node name="Block35" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="85" unique_id=1188357007]
+transform = Transform3D(-1.7484555e-05, 400, 1.7484555e-05, 0, -1.7484555e-05, 400, 400, 1.7484555e-05, 7.6427417e-13, -3.5476398, 50.03638, -2.1592839)
+mesh = ExtResource("13_4m3ey")
+
+[node name="Block36" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="86" unique_id=2063298379]
+transform = Transform3D(-1.7484555e-05, 400, 1.7484555e-05, 0, -1.7484555e-05, 400, 400, 1.7484555e-05, 7.6427417e-13, 20.272768, 53.86601, -2.1592839)
+mesh = ExtResource("13_4m3ey")
+
+[node name="Block37" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="87" unique_id=922752798]
+transform = Transform3D(-1.7484555e-05, 400, 1.7484555e-05, 0, -1.7484555e-05, 400, 400, 1.7484555e-05, 7.6427417e-13, 12.329769, 53.86601, -2.1592839)
+mesh = ExtResource("13_4m3ey")
+
+[node name="Block38" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="88" unique_id=593615447]
+transform = Transform3D(-1.7484555e-05, 400, 1.7484555e-05, 0, -1.7484555e-05, 400, 400, 1.7484555e-05, 7.6427417e-13, 4.4026384, 53.86601, -2.1592839)
+mesh = ExtResource("13_4m3ey")
+
+[node name="Block39" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="89" unique_id=1971563142]
+transform = Transform3D(-1.7484555e-05, 400, 1.7484555e-05, 0, -1.7484555e-05, 400, 400, 1.7484555e-05, 7.6427417e-13, -3.5476398, 53.86601, -2.1592839)
+mesh = ExtResource("13_4m3ey")
+
+[node name="Block27" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="90" unique_id=938757893]
+transform = Transform3D(-1.7484555e-05, 400, 1.7484555e-05, 0, -1.7484555e-05, 400, 400, 1.7484555e-05, 7.6427417e-13, 12.434304, 40.070328, -2.1592839)
+mesh = ExtResource("13_4m3ey")
+
+[node name="Block28" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="91" unique_id=1317246540]
+transform = Transform3D(-1.7484555e-05, 400, 1.7484555e-05, 0, -1.7484555e-05, 400, 400, 1.7484555e-05, 7.6427417e-13, 4.5230083, 40.070328, -2.1592839)
+mesh = ExtResource("13_4m3ey")
+
+[node name="Block29" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="92" unique_id=1241885655]
+transform = Transform3D(-1.7484555e-05, 400, 1.7484555e-05, 0, -1.7484555e-05, 400, 400, 1.7484555e-05, 7.6427417e-13, -3.4950805, 40.070328, -2.1592839)
+mesh = ExtResource("13_4m3ey")
+
+[node name="Block12" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="93" unique_id=635775241]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 14.820868, 29.156696, -0.18900931)
+mesh = ExtResource("13_4m3ey")
+
+[node name="Block15" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="94" unique_id=102538699]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 22.775146, 27.158802, -0.18900931)
+mesh = ExtResource("13_4m3ey")
+
+[node name="Block16" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="95" unique_id=1058969013]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 26.71608, 27.158802, -0.18900931)
+mesh = ExtResource("13_4m3ey")
+
+[node name="Block17" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="96" unique_id=838752692]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 18.799778, 27.158802, -0.18900931)
+mesh = ExtResource("13_4m3ey")
+
+[node name="Block18" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="97" unique_id=1314182485]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 14.830505, 27.158802, -0.18900931)
+mesh = ExtResource("13_4m3ey")
+
+[node name="Block13" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="98" unique_id=1509110414]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 18.799778, 31.147022, -0.18900931)
+mesh = ExtResource("13_4m3ey")
+
+[node name="Block14" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="99" unique_id=560460819]
+transform = Transform3D(-8.742278e-06, 200, 8.742278e-06, 0, -8.742278e-06, 200, 200, 8.742278e-06, 3.8213708e-13, 14.830505, 31.147022, -0.18900931)
+mesh = ExtResource("13_4m3ey")
+
+[node name="Block54" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="100" unique_id=574246754]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, 22.781376, 45.947266, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block55" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="101" unique_id=259617940]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, 22.781376, 47.363033, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block56" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="102" unique_id=1668134364]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, 22.781376, 48.785683, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block57" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="103" unique_id=1676275917]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, 19.803389, 45.947266, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block58" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="104" unique_id=1299253715]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, 19.803389, 47.363033, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block59" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="105" unique_id=1389291226]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, 19.803389, 48.785683, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block60" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="106" unique_id=1384994907]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, 16.809586, 45.947266, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block61" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="107" unique_id=1485792858]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, 16.809586, 47.363033, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block62" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="108" unique_id=1086661984]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, 16.809586, 48.785683, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block63" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="109" unique_id=1655434032]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, 13.76873, 45.947266, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block64" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="110" unique_id=53798039]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, 13.76873, 47.363033, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block65" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="111" unique_id=745187133]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, 13.76873, 48.785683, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block66" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="112" unique_id=1727868980]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, 10.75645, 45.947266, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block67" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="113" unique_id=1490305233]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, 10.75645, 47.363033, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block68" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="114" unique_id=38277709]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, 10.75645, 48.785683, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block69" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="115" unique_id=581799630]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, 7.746726, 45.947266, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block70" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="116" unique_id=801728299]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, 7.746726, 47.363033, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block71" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="117" unique_id=1752260719]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, 7.746726, 48.785683, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block72" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="118" unique_id=1899902417]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, 4.727017, 45.947266, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block73" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="119" unique_id=1212577803]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, 4.727017, 47.363033, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block74" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="120" unique_id=1208675235]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, 4.727017, 48.785683, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block75" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="121" unique_id=103244579]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, 1.7369735, 45.947266, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block76" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="122" unique_id=1228575847]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, 1.7369735, 47.363033, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block77" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="123" unique_id=676331845]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, 1.7369735, 48.785683, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block78" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="124" unique_id=1603122312]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, -1.2615635, 45.947266, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block79" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="125" unique_id=531862546]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, -1.2615635, 47.363033, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block80" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="126" unique_id=1295266400]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, -1.2615635, 48.785683, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block81" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="127" unique_id=1563619966]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, -4.2533493, 45.947266, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block82" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="128" unique_id=553660992]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, -4.2533493, 47.363033, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block83" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="129" unique_id=1463213141]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, -4.2533493, 48.785683, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block84" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="130" unique_id=332744382]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, -7.2262006, 45.947266, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block85" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="131" unique_id=824019694]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, -7.2262006, 47.363033, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="Block86" type="MeshInstance3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="132" unique_id=1474382217]
+transform = Transform3D(-6.5567083e-06, 150, 6.5567083e-06, 0, -6.5567083e-06, 150, 150, 6.5567083e-06, 2.8660283e-13, -7.2262006, 48.785683, -3.1343904)
+mesh = ExtResource("14_lylsv")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="Background" parent_id_path=PackedInt32Array(919741197) index="133" unique_id=531850191]
+
+[node name="LadderMesh" type="MeshInstance3D" parent="Background/StaticBody3D5" index="0" unique_id=1474041932]
+transform = Transform3D(-7.86805e-06, 180, 7.86805e-06, 0, -7.86805e-06, 180, 180, 7.86805e-06, 3.4392338e-13, 22.560682, 31.121214, -0.60335207)
+mesh = ExtResource("2_0fpmu")
+
+[node name="Colision" type="MeshInstance3D" parent="Background/StaticBody3D5" index="1" unique_id=1767133492]
+transform = Transform3D(-7.86805e-06, 180, 7.86805e-06, 0, -7.86805e-06, 180, 180, 7.86805e-06, 3.4392338e-13, 22.561, 31.121, -0.603)
+visible = false
+mesh = ExtResource("9_b3n1j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/StaticBody3D5" index="2" unique_id=1881468478]
+transform = Transform3D(-7.86805e-06, 180, 7.86805e-06, 0, -7.86805e-06, 180, 180, 7.86805e-06, 3.4392338e-13, 22.561, 31.121, -0.603)
+shape = ExtResource("9_faulo")
+
+[node name="Component16" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="0" unique_id=276585511]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 9.246633, 32.871357, 0.5757386)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Component17" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="1" unique_id=1365279774]
+transform = Transform3D(100.000015, 0, 0, 0, 47.163486, 88.179405, 0, -88.179405, 47.163486, 9.16459, 32.805508, -0.43929148)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Component18" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="2" unique_id=2099901704]
+transform = Transform3D(100.000015, 0, 0, 0, 11.4590225, -99.34128, 0, 99.34128, 11.4590225, 9.16459, 32.674946, 0.17913431)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Component4" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="3" unique_id=1179421516]
+transform = Transform3D(92.14761, -38.84353, -4.6305095e-06, 0, -1.1920929e-05, 100.00001, -38.843533, -92.147606, -1.0984851e-05, 7.607436, 32.902786, -0.31375706)
+mesh = ExtResource("9_m8ou3")
+
+[node name="КриваяБезье007" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="4" unique_id=1682448762]
+transform = Transform3D(100, 0, 0, 0, -4.371139e-06, -100, 0, 100, -4.371139e-06, 8.113027, 32.902412, 0.22372317)
+mesh = ExtResource("10_odihm")
+
+[node name="Цилиндр5" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="5" unique_id=917564151]
+transform = Transform3D(-4.371139e-06, -100, -4.371139e-06, 0, -4.371139e-06, 100, -100, 4.371139e-06, 1.9106854e-13, 8.651471, 32.872112, -0.812027)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр21" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="6" unique_id=1928956640]
+transform = Transform3D(-4.371139e-06, -100, -4.371139e-06, 0, -4.371139e-06, 100, -100, 4.371139e-06, 1.9106854e-13, 13.31855, 33.135696, 1.7978176)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр23" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="7" unique_id=597312176]
+transform = Transform3D(-4.371139e-06, -100, -4.371139e-06, 0, -4.371139e-06, 100, -100, 4.371139e-06, 1.9106854e-13, 14.882225, 33.135696, 1.7978176)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр24" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="8" unique_id=1650971910]
+transform = Transform3D(-4.371139e-06, -100, -4.371139e-06, 0, -4.371139e-06, 100, -100, 4.371139e-06, 1.9106854e-13, 15.668884, 33.135696, 1.7978176)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр27" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="9" unique_id=1372211541]
+transform = Transform3D(-4.371139e-06, -100, -4.371139e-06, 0, -4.371139e-06, 100, -100, 4.371139e-06, 1.9106854e-13, 18.80294, 33.135696, 1.7978176)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр30" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="10" unique_id=1372631522]
+transform = Transform3D(-4.371139e-06, -100, -4.371139e-06, 0, -4.371139e-06, 100, -100, 4.371139e-06, 1.9106854e-13, 20.366886, 33.135696, 1.7978176)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр28" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="11" unique_id=530193767]
+transform = Transform3D(-4.371139e-06, -100, -4.371139e-06, 0, -4.371139e-06, 100, -100, 4.371139e-06, 1.9106854e-13, 18.020655, 33.135696, 1.7978176)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр12" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="12" unique_id=203432652]
+transform = Transform3D(100, 0, 0, 0, -4.371139e-06, 100, 0, -100, -4.371139e-06, 12.926448, 33.139214, -1.2588124)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр19" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="13" unique_id=1667244723]
+transform = Transform3D(60.86736, 75.200775, -25.298378, -1.2949716, 32.822533, 94.451065, 79.33149, -57.162254, 20.95204, 12.648894, 32.991222, -0.643323)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр22" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="14" unique_id=1628518023]
+transform = Transform3D(60.86736, 75.200775, -25.298378, -1.2949716, 32.822533, 94.451065, 79.33149, -57.162254, 20.95204, 18.639954, 32.991222, 2.006392)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр20" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="15" unique_id=738850392]
+transform = Transform3D(100, 0, 0, 0, -4.371139e-06, 100, 0, -100, -4.371139e-06, 12.926448, 33.139214, 1.4069445)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр31" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="16" unique_id=7266440]
+transform = Transform3D(100, 0, 0, 0, -4.371139e-06, 100, 0, -100, -4.371139e-06, 20.758602, 33.139214, -1.2588124)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр32" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="17" unique_id=715915486]
+transform = Transform3D(-54.307125, -79.54403, 26.89764, -1.2949693, 32.822533, 94.451065, -83.95866, 50.945335, -18.855043, 21.063412, 33.010967, -1.0656459)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр33" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="18" unique_id=1604939484]
+transform = Transform3D(100, 0, 0, 0, -4.371139e-06, 100, 0, -100, -4.371139e-06, 20.758602, 33.139214, 1.4069445)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр34" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="19" unique_id=1227796820]
+transform = Transform3D(-3.9118822e-06, -89.49344, 44.61978, 100, -4.371139e-06, 0, 1.9503925e-06, 44.61978, 89.49344, 22.980593, 31.17371, 0.7116179)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр35" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="20" unique_id=1846146762]
+transform = Transform3D(4.3585906e-06, 99.71294, -7.5716057, 100, -4.371139e-06, 0, -3.3096524e-07, -7.5716057, -99.71294, 18.23642, 33.143333, 0.6495065)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр6" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="21" unique_id=310292987]
+transform = Transform3D(-4.371139e-06, -100, -4.371139e-06, 0, -4.371139e-06, 100, -100, 4.371139e-06, 1.9106854e-13, 7.863311, 32.872112, -0.812027)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр7" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="22" unique_id=266703091]
+transform = Transform3D(31.66089, -94.85561, -4.14627e-06, -23.729633, -7.9204764, 96.82031, -91.83949, -30.654167, -25.01658, 7.070001, 32.872112, -0.812027)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр8" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="23" unique_id=832979218]
+transform = Transform3D(-4.371139e-06, -100, -4.371139e-06, 0, -4.371139e-06, 100, -100, 4.371139e-06, 1.9106854e-13, 6.289915, 32.872112, -0.812027)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Component19" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="24" unique_id=601444162]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 12.86201, 24.003754, 0.5757391)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Component20" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="25" unique_id=651545265]
+transform = Transform3D(100.000015, 0, 0, 0, 47.163486, 88.179405, 0, -88.179405, 47.163486, 12.779967, 23.937904, -0.439291)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Component21" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="26" unique_id=997153299]
+transform = Transform3D(100.000015, 0, 0, 0, 11.4590225, -99.34128, 0, 99.34128, 11.4590225, 12.779967, 23.807343, 0.17913479)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Component22" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="27" unique_id=434947764]
+transform = Transform3D(-99.99297, -1.1866443, -1.4145903e-07, 0, -1.1920929e-05, 100.00001, -1.1866444, 99.992966, 1.19200895e-05, 9.360745, 24.003754, -0.3659664)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Component23" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="28" unique_id=243570858]
+transform = Transform3D(-99.99297, -1.0463758, 0.5596627, 5.551116e-15, 47.16348, 88.1794, -1.1866443, 88.173195, -47.16016, 9.4307375, 23.937904, 0.64996576)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Component24" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="29" unique_id=1790900247]
+transform = Transform3D(-99.99297, 1.1788274, 0.1359778, -1.387779e-15, 11.459019, -99.34126, -1.1866442, -99.33427, -11.458212, 9.438076, 23.807343, 0.031583525)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Component5" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="30" unique_id=1867869092]
+transform = Transform3D(-96.50746, 26.197575, 3.122994e-06, 0, -1.1920929e-05, 100.00001, 26.197577, 96.507454, 1.1504584e-05, 10.773851, 24.014265, -0.67388386)
+mesh = ExtResource("21_odihm")
+
+[node name="Component10" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="31" unique_id=305667332]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 12.045867, 24.055447, 0.17715502)
+mesh = ExtResource("22_vh8st")
+
+[node name="Цилиндр" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="32" unique_id=1178457228]
+transform = Transform3D(-4.371139e-06, -100, -4.371139e-06, 0, -4.371139e-06, 100, -100, 4.371139e-06, 1.9106854e-13, 12.27176, 24.077728, -0.812027)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр2" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="33" unique_id=190411083]
+transform = Transform3D(-4.371139e-06, -100, -4.371139e-06, 0, -4.371139e-06, 100, -100, 4.371139e-06, 1.9106854e-13, 11.4836, 24.077728, -0.812027)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр3" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="34" unique_id=401185337]
+transform = Transform3D(-4.371139e-06, -100, -4.371139e-06, 0, -4.371139e-06, 100, -100, 4.371139e-06, 1.9106854e-13, 10.6902895, 24.077728, -0.812027)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр4" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="35" unique_id=870266054]
+transform = Transform3D(-4.371139e-06, -100, -4.371139e-06, 0, -4.371139e-06, 100, -100, 4.371139e-06, 1.9106854e-13, 9.910204, 24.077728, -0.812027)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Component25" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="36" unique_id=1153251762]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 4.8018317, 26.558754, 0.5757392)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Component29" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="37" unique_id=1073904898]
+transform = Transform3D(-99.98958, 1.273868, -0.6813387, 2.549891e-13, 47.16348, 88.1794, 1.444632, 88.1702, -47.158558, 1.0056643, 26.492905, 0.6492278)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Component32" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="38" unique_id=16814986]
+transform = Transform3D(79.45481, -60.720142, -7.2384046e-06, 0, -1.1920929e-05, 100.00001, -60.720146, -79.4548, -9.471751e-06, 1.3133893, 26.577036, -0.58388084)
+mesh = ExtResource("20_plkcr")
+
+[node name="Component28" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="39" unique_id=54429934]
+transform = Transform3D(-99.98958, 1.444632, 1.7221356e-07, -6.211761e-20, -1.1920929e-05, 100.00001, 1.4446322, 99.98957, 1.1919685e-05, 0.90896654, 26.558754, -0.36451128)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Component30" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="40" unique_id=1635048419]
+transform = Transform3D(-99.98958, -1.4351159, -0.1655407, 0, 11.4590225, -99.34128, 1.4446322, -99.33091, -11.457827, 0.9967303, 26.362343, 0.030866534)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Component33" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="41" unique_id=625423050]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 3.6756577, 26.601866, 0.19471407)
+mesh = ExtResource("22_vh8st")
+
+[node name="Component26" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="42" unique_id=87827131]
+transform = Transform3D(100.000015, 0, 0, 0, 47.163486, 88.179405, 0, -88.179405, 47.163486, 4.719789, 26.492905, -0.439291)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Component31" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="43" unique_id=1129820799]
+transform = Transform3D(-71.90162, -36.009235, -59.443176, -53.150307, -26.61836, 80.4146, -44.77949, 89.41362, 1.0587828e-05, 4.254024, 26.542702, 0.37509274)
+mesh = ExtResource("21_ucg3d")
+
+[node name="Component27" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="44" unique_id=404690977]
+transform = Transform3D(100.000015, 0, 0, 0, 11.4590225, -99.34128, 0, 99.34128, 11.4590225, 4.719789, 26.362343, 0.17913477)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Цилиндр15" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="45" unique_id=1672495788]
+transform = Transform3D(-4.371139e-06, -100, -4.371139e-06, 0, -4.371139e-06, 100, -100, 4.371139e-06, 1.9106854e-13, 4.137344, 26.57441, -0.81202745)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр16" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="46" unique_id=2038340484]
+transform = Transform3D(-4.371139e-06, -100, -4.371139e-06, 0, -4.371139e-06, 100, -100, 4.371139e-06, 1.9106854e-13, 3.3491836, 26.57441, -0.81202734)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр17" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="47" unique_id=98904727]
+transform = Transform3D(-4.371139e-06, -100, -4.371139e-06, 0, -4.371139e-06, 100, -100, 4.371139e-06, 1.9106854e-13, 2.5558734, 26.57441, -0.81202745)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр18" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="48" unique_id=1518456373]
+transform = Transform3D(-4.371139e-06, -100, -4.371139e-06, 0, -4.371139e-06, 100, -100, 4.371139e-06, 1.9106854e-13, 1.7757878, 26.57441, -0.81202745)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Component1" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="49" unique_id=421470231]
+transform = Transform3D(86.23722, 50.627502, 6.035268e-06, 0, -1.1920929e-05, 100.00001, 50.627506, -86.23721, -1.0280277e-05, 23.714334, 24.255482, 0.5398535)
+mesh = ExtResource("25_hhhfn")
+
+[node name="Component3" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="50" unique_id=1797779241]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 26.522327, 24.231365, 0.5757386)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Component11" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="51" unique_id=1386596005]
+transform = Transform3D(100.000015, 0, 0, 0, 47.163486, 88.179405, 0, -88.179405, 47.163486, 26.440285, 24.165516, -0.43929148)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Component12" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="52" unique_id=1824080391]
+transform = Transform3D(100.000015, 0, 0, 0, 11.4590225, -99.34128, 0, 99.34128, 11.4590225, 26.440285, 24.034954, 0.17913431)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Component13" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="53" unique_id=930914026]
+transform = Transform3D(-99.98351, -1.8162833, -2.1651785e-07, 0, -1.1920929e-05, 100.00001, -1.8162836, 99.983505, 1.1918962e-05, 19.72288, 24.231365, -0.36626676)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Component14" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="54" unique_id=2056695010]
+transform = Transform3D(-99.98351, -1.6015879, 0.85662246, 0, 47.16348, 88.1794, -1.8162835, 88.16485, -47.155697, 19.786474, 24.165516, 0.6500859)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Component15" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="55" unique_id=1293385181]
+transform = Transform3D(-99.98351, 1.8043189, 0.20812827, 0, 11.459019, -99.34126, -1.8162832, -99.32487, -11.457128, 19.797707, 24.034954, 0.031762235)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Component6" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="56" unique_id=402772010]
+transform = Transform3D(77.16009, -63.610714, -7.582988e-06, 0, -1.1920929e-05, 100.00001, -63.61072, -77.16008, -9.198198e-06, 25.711714, 24.255482, 0.5262491)
+mesh = ExtResource("21_ucg3d")
+
+[node name="Component7" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="57" unique_id=1740647724]
+transform = Transform3D(79.45481, -60.720142, -7.2384046e-06, 0, -1.1920929e-05, 100.00001, -60.720146, -79.4548, -9.471751e-06, 21.159206, 24.255482, -0.32801908)
+mesh = ExtResource("20_plkcr")
+
+[node name="Component8" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="58" unique_id=990910124]
+transform = Transform3D(76.83666, 64.00101, 7.629514e-06, 0, -1.1920929e-05, 100.00001, 64.001015, -76.836655, -9.159642e-06, 23.027199, 24.255482, 0.42238504)
+mesh = ExtResource("26_wqun2")
+
+[node name="Component9" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="59" unique_id=1419861065]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 21.823582, 24.255482, 0.17715502)
+mesh = ExtResource("22_vh8st")
+
+[node name="КриваяБезье003" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="60" unique_id=264377051]
+transform = Transform3D(200, 0, 0, 0, -8.742278e-06, -200, 0, 200, -8.742278e-06, 22.981781, 24.28151, 0.17320824)
+mesh = ExtResource("27_x0bbt")
+
+[node name="КриваяБезье004" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="61" unique_id=2090144713]
+transform = Transform3D(200, 0, 0, 0, -8.742278e-06, -200, 0, 200, -8.742278e-06, 26.013817, 31.176281, -0.5194174)
+mesh = ExtResource("27_x0bbt")
+
+[node name="Цилиндр9" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="62" unique_id=921427613]
+transform = Transform3D(-4.371139e-06, -100, -4.371139e-06, 0, -4.371139e-06, 100, -100, 4.371139e-06, 1.9106854e-13, 25.95497, 24.261826, -0.812027)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр10" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="63" unique_id=50885100]
+transform = Transform3D(-39.462246, -91.88433, -4.0163923e-06, -26.118189, 11.217168, 95.875015, -88.0941, 37.834427, -28.425068, 25.305721, 24.222153, -0.9558556)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр13" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="64" unique_id=1402833315]
+transform = Transform3D(32.13822, -92.64552, 19.594393, -26.118187, 11.217166, 95.87501, -91.02183, -35.930218, -20.592335, 21.214653, 24.222153, -0.9558556)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр11" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="65" unique_id=63406828]
+transform = Transform3D(-4.371139e-06, -100, -4.371139e-06, 0, -4.371139e-06, 100, -100, 4.371139e-06, 1.9106854e-13, 24.540558, 24.261826, -0.812027)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр14" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="66" unique_id=2132925096]
+transform = Transform3D(-4.371139e-06, -100, -4.371139e-06, 0, -4.371139e-06, 100, -100, 4.371139e-06, 1.9106854e-13, 22.044056, 24.261826, -0.812027)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Плоскость007" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="67" unique_id=1104922853]
+transform = Transform3D(89.483894, 0, -44.638924, 0, 100, 0, 44.638924, 0, 89.483894, 4.2579484, 46.077404, -1.0130529)
+mesh = ExtResource("21_odihm")
+
+[node name="Куб001" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="68" unique_id=76018424]
+transform = Transform3D(23.142786, 0, -97.2852, 0, 100, 0, 97.2852, 0, 23.142786, 9.99245, 46.018814, 0.65269375)
+mesh = ExtResource("20_plkcr")
+
+[node name="Куб" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="69" unique_id=848276037]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 7.61833, 46.023933, -0.51841235)
+mesh = ExtResource("21_ucg3d")
+
+[node name="Куб002" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="70" unique_id=647753590]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 15.695167, 45.987495, -0.47472215)
+mesh = ExtResource("26_wqun2")
+
+[node name="Куб006" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="71" unique_id=1462571061]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 14.40116, 33.153744, -0.47472215)
+mesh = ExtResource("26_wqun2")
+
+[node name="Плоскость" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="72" unique_id=856990559]
+transform = Transform3D(94.20418, -33.549545, 1.4664971e-06, 0, -4.371139e-06, -100, 33.549545, 94.20418, -4.1177955e-06, 10.2353115, 46.00947, 0.18936086)
+mesh = ExtResource("25_hhhfn")
+
+[node name="Плоскость002" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="73" unique_id=53990143]
+transform = Transform3D(78.018776, 0, 62.55454, 0, 100, 0, -62.55454, 0, 78.018776, 23.657425, 46.108204, -1.043504)
+mesh = ExtResource("29_x0bbt")
+
+[node name="Плоскость004" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="74" unique_id=349505650]
+transform = Transform3D(97.80903, 0, -20.818121, 0, 100, 0, 20.818121, 0, 97.80903, 14.654102, 46.227604, 0.902555)
+mesh = ExtResource("9_m8ou3")
+
+[node name="Куб003" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="75" unique_id=1607220145]
+transform = Transform3D(23.142786, 0, -97.2852, 0, 100, 0, 97.2852, 0, 23.142786, 23.934475, 31.198097, 1.1030593)
+mesh = ExtResource("20_plkcr")
+
+[node name="Куб004" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="76" unique_id=1023477784]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 27.711477, 31.10775, -0.47472215)
+mesh = ExtResource("26_wqun2")
+
+[node name="Плоскость2" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="77" unique_id=703001197]
+transform = Transform3D(94.20418, -33.549545, 1.4664971e-06, 0, -4.371139e-06, -100, 33.549545, 94.20418, -4.1177955e-06, 26.371902, 31.188755, 0.26129484)
+mesh = ExtResource("25_hhhfn")
+
+[node name="Куб005" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="78" unique_id=539623172]
+transform = Transform3D(23.142786, 0, -97.2852, 0, 100, 0, 97.2852, 0, 23.142786, 18.768784, 33.167717, -0.12779927)
+mesh = ExtResource("20_plkcr")
+
+[node name="Плоскость3" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="79" unique_id=1737861539]
+transform = Transform3D(94.20418, -33.549545, 1.4664971e-06, 0, -4.371139e-06, -100, 33.549545, 94.20418, -4.1177955e-06, 19.31131, 33.15838, 0.18936086)
+mesh = ExtResource("25_hhhfn")
+
+[node name="Плоскость005" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="80" unique_id=1700298328]
+transform = Transform3D(97.80903, 0, -20.818121, 0, 100, 0, 20.818121, 0, 97.80903, 26.670412, 31.347858, 0.902555)
+mesh = ExtResource("9_m8ou3")
+
+[node name="Плоскость006" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="81" unique_id=429704848]
+transform = Transform3D(100, 0, 0, 0, -28.80234, -95.76234, 0, 95.76234, -28.80234, 24.377594, 45.880814, 1.6997981)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Плоскость025" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="82" unique_id=1335886670]
+transform = Transform3D(100, 0, 0, 0, -28.80234, -95.76234, 0, 95.76234, -28.80234, 24.377594, 56.569344, 1.6997981)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Плоскость010" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="83" unique_id=1585004506]
+transform = Transform3D(100, 0, 0, 0, -91.52247, 40.294334, 0, -40.294334, -91.52247, 24.377594, 45.69679, -0.8788135)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Плоскость017" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="84" unique_id=465265523]
+transform = Transform3D(100, 0, 0, 0, -86.78198, -49.687828, 0, 49.687828, -86.78198, 24.377594, 45.753548, 0.08285129)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Плоскость018" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="85" unique_id=1038430803]
+transform = Transform3D(100, 0, 0, 0, -86.78198, -49.687828, 0, 49.687828, -86.78198, 24.377594, 38.521873, 0.08285129)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Плоскость011" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="86" unique_id=811767730]
+transform = Transform3D(100, 0, 0, 0, -99.478485, -10.199242, 0, 10.199242, -99.478485, 24.377594, 45.664425, 1.4622684)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Плоскость009" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="87" unique_id=929203770]
+transform = Transform3D(100, 0, 0, 0, 28.150625, 95.955925, 0, -95.955925, 28.150625, 24.377594, 45.880814, -1.2299304)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Плоскость008" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="88" unique_id=923085495]
+transform = Transform3D(100, 0, 0, 0, 50.08654, -86.552505, 0, 86.552505, 50.08654, 24.378443, 45.880814, 0.43793237)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Плоскость012" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="89" unique_id=1638865166]
+transform = Transform3D(100, 0, 0, 0, -28.80234, -95.76234, 0, 95.76234, -28.80234, 24.370464, 38.630245, 1.6997981)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Плоскость013" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="90" unique_id=830881474]
+transform = Transform3D(100, 0, 0, 0, -91.52247, 40.294334, 0, -40.294334, -91.52247, 24.370464, 38.44622, -0.8788135)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Плоскость014" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="91" unique_id=1204845437]
+transform = Transform3D(100, 0, 0, 0, -99.478485, -10.199242, 0, 10.199242, -99.478485, 24.370464, 38.413857, 1.1968983)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Плоскость015" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="92" unique_id=54391721]
+transform = Transform3D(100, 0, 0, 0, 28.150625, 95.955925, 0, -95.955925, 28.150625, 24.370464, 38.630245, -0.46182346)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Плоскость016" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="93" unique_id=187799320]
+transform = Transform3D(100, 0, 0, 0, 50.08654, -86.552505, 0, 86.552505, 50.08654, 24.371313, 38.630245, 0.6692741)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Плоскость019" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="94" unique_id=1777246524]
+transform = Transform3D(-100, -4.343847e-06, 7.586722e-06, 0, -86.78199, -49.68782, 8.742278e-06, -49.68782, 86.78199, 12.830804, 32.99934, 0.08285129)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Плоскость020" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="95" unique_id=729863202]
+transform = Transform3D(-100, -8.37181e-06, 2.5179804e-06, 0, -28.802338, -95.76234, 8.742278e-06, -95.76234, 28.802338, 12.823674, 33.10771, 1.6997981)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Плоскость021" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="96" unique_id=1692529850]
+transform = Transform3D(-100, 3.5226426e-06, 8.001148e-06, 0, -91.52246, 40.29434, 8.742278e-06, 40.29434, 91.52246, 12.823674, 32.923687, -0.8788135)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Плоскость022" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="97" unique_id=542538096]
+transform = Transform3D(-100, -8.916463e-07, 8.696686e-06, 0, -99.478485, -10.1992445, 8.742278e-06, -10.1992445, 99.478485, 14.117681, 32.891323, 1.1968983)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Плоскость023" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="98" unique_id=1479859576]
+transform = Transform3D(-100, 8.3887335e-06, -2.4610056e-06, 0, 28.150623, 95.955925, 8.742278e-06, 95.955925, -28.150623, 12.823674, 33.10771, -0.46182346)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Плоскость024" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="99" unique_id=509834918]
+transform = Transform3D(-100, -7.5666608e-06, -4.3787045e-06, 0, 50.08654, -86.552505, 8.742278e-06, -86.552505, -50.08654, 12.824523, 33.10771, 0.6692741)
+mesh = ExtResource("8_dpe6j")
+
+[node name="DoorMesh" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="100" unique_id=1967313881]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 20.035902, 33.220818, -1.8291402)
+mesh = ExtResource("30_04wwc")
+
+[node name="LampMesh001" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="101" unique_id=70049061]
+transform = Transform3D(70, 0, 0, 0, 70, 0, 0, 0, 70, 21.301067, 48.140396, -1.6349382)
+mesh = ExtResource("31_xghi6")
+
+[node name="LampMesh015" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="102" unique_id=1927593644]
+transform = Transform3D(1.3374798e-13, 3.059797e-06, 70, 70, -3.059797e-06, 0, 3.059797e-06, 70, -3.059797e-06, 24.342192, 45.7941, 0.98269284)
+mesh = ExtResource("31_xghi6")
+
+[node name="LampMesh016" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="103" unique_id=716389199]
+transform = Transform3D(1.3374798e-13, 3.059797e-06, 70, 70, -3.059797e-06, 0, 3.059797e-06, 70, -3.059797e-06, 24.342192, 45.7941, -0.47364223)
+mesh = ExtResource("31_xghi6")
+
+[node name="LampMesh010" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="104" unique_id=1684304634]
+transform = Transform3D(70, 0, 0, 0, 70, 0, 0, 0, 70, 7.5806828, 34.758183, -1.7365229)
+mesh = ExtResource("31_xghi6")
+surface_material_override/1 = SubResource("StandardMaterial3D_vxfg6")
+
+[node name="LampMesh013" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="105" unique_id=753707170]
+transform = Transform3D(70, 0, 0, 0, 70, 0, 0, 0, 70, 16.317976, 34.758183, -1.7365229)
+mesh = ExtResource("31_xghi6")
+surface_material_override/1 = SubResource("StandardMaterial3D_vxfg6")
+
+[node name="LampMesh014" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="106" unique_id=2002309857]
+transform = Transform3D(70, 0, 0, 0, 70, 0, 0, 0, 70, 22.743948, 34.758183, -1.7365229)
+mesh = ExtResource("31_xghi6")
+surface_material_override/1 = SubResource("StandardMaterial3D_vxfg6")
+
+[node name="LampMesh011" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="107" unique_id=1719795134]
+transform = Transform3D(70, 0, 0, 0, 70, 0, 0, 0, 70, 11.276816, 25.759224, -1.7365229)
+mesh = ExtResource("31_xghi6")
+surface_material_override/1 = SubResource("StandardMaterial3D_vxfg6")
+
+[node name="LampMesh012" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="108" unique_id=1034634105]
+transform = Transform3D(70, 0, 0, 0, 70, 0, 0, 0, 70, 23.698689, 25.759224, -1.7365229)
+mesh = ExtResource("31_xghi6")
+surface_material_override/1 = SubResource("StandardMaterial3D_vxfg6")
+
+[node name="LampMesh002" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="109" unique_id=201705058]
+transform = Transform3D(70, 0, 0, 0, 70, 0, 0, 0, 70, 18.314215, 48.140396, -1.6349382)
+mesh = ExtResource("31_xghi6")
+
+[node name="LampMesh003" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="110" unique_id=992022779]
+transform = Transform3D(70, 0, 0, 0, 70, 0, 0, 0, 70, 15.296739, 48.140396, -1.6349382)
+mesh = ExtResource("31_xghi6")
+
+[node name="LampMesh004" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="111" unique_id=92620358]
+transform = Transform3D(70, 0, 0, 0, 70, 0, 0, 0, 70, 12.251937, 48.140396, -1.6349382)
+mesh = ExtResource("31_xghi6")
+
+[node name="LampMesh005" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="112" unique_id=213612314]
+transform = Transform3D(70, 0, 0, 0, 70, 0, 0, 0, 70, 9.265084, 48.140396, -1.6349382)
+mesh = ExtResource("31_xghi6")
+
+[node name="LampMesh006" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="113" unique_id=2105726924]
+transform = Transform3D(70, 0, 0, 0, 70, 0, 0, 0, 70, 6.247608, 48.140396, -1.6349382)
+mesh = ExtResource("31_xghi6")
+
+[node name="LampMesh007" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="114" unique_id=1533376401]
+transform = Transform3D(70, 0, 0, 0, 70, 0, 0, 0, 70, 3.2287612, 48.140396, -1.6349382)
+mesh = ExtResource("31_xghi6")
+
+[node name="LampMesh008" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="115" unique_id=1511824594]
+transform = Transform3D(70, 0, 0, 0, 70, 0, 0, 0, 70, 0.24190855, 48.140396, -1.6349382)
+mesh = ExtResource("31_xghi6")
+
+[node name="LampMesh009" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="116" unique_id=250591106]
+transform = Transform3D(70, 0, 0, 0, 70, 0, 0, 0, 70, -2.7755675, 48.140396, -1.6349382)
+mesh = ExtResource("31_xghi6")
+
+[node name="WentMesh" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="117" unique_id=260304804]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 10.762969, 46.677486, -1.6804074)
+mesh = ExtResource("32_vxfg6")
+
+[node name="WentMesh2" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="118" unique_id=1157894950]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 22.780857, 46.677486, -1.6804074)
+mesh = ExtResource("32_vxfg6")
+
+[node name="WentMesh3" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="119" unique_id=1682077946]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 16.828709, 49.442196, -1.6804074)
+mesh = ExtResource("32_vxfg6")
+
+[node name="TowerMesh" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="120" unique_id=30114176]
+transform = Transform3D(100, 0, 0, 0, -4.371139e-06, -100, 0, 100, -4.371139e-06, 12.175484, 48.212803, 2.6997938)
+mesh = ExtResource("33_gvqsu")
+
+[node name="TowerMesh5" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="121" unique_id=1642660532]
+transform = Transform3D(100, 0, 0, 0, -4.371139e-06, -100, 0, 100, -4.371139e-06, 12.175484, 53.745224, 2.6997938)
+mesh = ExtResource("33_gvqsu")
+
+[node name="TowerMesh6" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="122" unique_id=1753136529]
+transform = Transform3D(100, 0, 0, 0, -4.371139e-06, -100, 0, 100, -4.371139e-06, 12.175484, 42.71048, 2.6997938)
+mesh = ExtResource("33_gvqsu")
+
+[node name="TowerMesh2" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="123" unique_id=372740175]
+transform = Transform3D(100, 0, 0, 0, -4.371139e-06, -100, 0, 100, -4.371139e-06, 7.7943077, 48.212803, -2.4503727)
+mesh = ExtResource("33_gvqsu")
+
+[node name="TowerMesh3" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="124" unique_id=918473824]
+transform = Transform3D(100, 0, 0, 0, -4.371139e-06, -100, 0, 100, -4.371139e-06, 13.618642, 48.212803, -2.4503727)
+mesh = ExtResource("33_gvqsu")
+
+[node name="TowerMesh7" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="125" unique_id=1851638230]
+transform = Transform3D(72.925, 0, 0, 0, -3.1876532e-06, -72.925, 0, 72.925, -3.1876532e-06, 20.04783, 37.05687, -2.4503727)
+mesh = ExtResource("33_gvqsu")
+
+[node name="TowerMesh4" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="126" unique_id=526219341]
+transform = Transform3D(100, 0, 0, 0, -4.371139e-06, -100, 0, 100, -4.371139e-06, 19.820776, 48.212803, -2.4503727)
+mesh = ExtResource("33_gvqsu")
+
+[node name="КриваяБезье008" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="127" unique_id=1778584804]
+transform = Transform3D(100, 0, 0, 0, -4.371139e-06, -100, 0, 100, -4.371139e-06, 6.613193, 45.989445, 0.31311226)
+mesh = ExtResource("10_odihm")
+
+[node name="КриваяБезье009" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="128" unique_id=431066340]
+transform = Transform3D(100, 0, 0, 0, -4.371139e-06, -100, 0, 100, -4.371139e-06, 15.590542, 33.15917, 0.31311226)
+mesh = ExtResource("10_odihm")
+
+[node name="КриваяБезье005" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="129" unique_id=622741183]
+transform = Transform3D(100, 0, 0, 0, -4.371139e-06, -100, 0, 100, -4.371139e-06, 12.576294, 45.98663, -0.39307022)
+mesh = ExtResource("34_sguyg")
+
+[node name="КриваяБезье006" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="130" unique_id=1553188430]
+transform = Transform3D(150, 0, 0, 0, -6.5567083e-06, -150, 0, 150, -6.5567083e-06, 21.989462, 45.992638, 0.4594679)
+mesh = ExtResource("35_u5i6r")
+
+[node name="TowerMesh001" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="131" unique_id=947102337]
+transform = Transform3D(-4.371139e-06, 100, -4.371139e-06, 0, -4.371139e-06, -100, -100, -4.371139e-06, 1.9106854e-13, 20.023468, 35.807346, -2.4959416)
+mesh = ExtResource("36_u5i6r")
+
+[node name="КриваяБезье" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="132" unique_id=1640740272]
+transform = Transform3D(-6.0877546e-06, 139.27159, -55.708385, -149.99998, -6.5567083e-06, 0, -2.4350911e-06, 55.708385, 139.27159, 16.745396, 35.34573, 0.107806206)
+mesh = ExtResource("37_7c4p0")
+
+[node name="КриваяБезье2" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="133" unique_id=1438369921]
+transform = Transform3D(-1.311056e-05, 299.93463, -6.261574, -300.00003, -1.31134175e-05, -9.827254e-13, -2.7370334e-07, 6.261574, 299.93463, 7.0925064, 32.56295, -1.3438839)
+mesh = ExtResource("37_7c4p0")
+
+[node name="КриваяБезье001" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="134" unique_id=563141893]
+transform = Transform3D(-6.5567083e-06, 150, 0, -150, -6.5567083e-06, 0, 0, 0, 150, 22.34667, 35.32807, 1.1486721)
+mesh = ExtResource("38_ov00o")
+
+[node name="КриваяБезье010" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="135" unique_id=1819540314]
+transform = Transform3D(-2.1740434e-05, 497.3632, 51.281902, -499.99997, -2.185569e-05, -1.323489e-20, 2.241603e-06, -51.281902, 497.3632, 9.457142, 28.022198, 1.1486721)
+mesh = ExtResource("38_ov00o")
+
+[node name="КриваяБезье002" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="136" unique_id=1399926430]
+transform = Transform3D(-6.5567083e-06, 150, 0, -150, -6.5567083e-06, 0, 0, 0, 150, 18.887383, 35.33929, -1.0163502)
+mesh = ExtResource("39_ov00o")
+
+[node name="КриваяБезье011" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="137" unique_id=1971559214]
+transform = Transform3D(-1.2371154e-05, 283.01898, -99.49992, -299.99997, -1.3113417e-05, 0, -4.34928e-06, 99.49992, 283.01898, 1.1202211, 32.602703, 0.52573407)
+mesh = ExtResource("39_ov00o")
+
+[node name="КриваяБезье012" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="138" unique_id=1988658440]
+transform = Transform3D(1.0482642e-05, -239.81491, -180.24644, -299.99997, -1.3113416e-05, 1.2021109e-13, -7.878826e-06, 180.24644, -239.81491, 17.123703, 22.25186, 0.52573407)
+mesh = ExtResource("39_ov00o")
+
+[node name="Cube001" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="139" unique_id=182872056]
+transform = Transform3D(-11.54474, -48.648937, -2.1265125e-06, 0, -2.1855694e-06, 50, -48.648937, 11.54474, 5.046366e-07, 14.4975815, 33.178905, -0.91046715)
+mesh = ExtResource("40_70vth")
+
+[node name="Cube002" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="140" unique_id=89793473]
+transform = Transform3D(7.8114877, -44.99049, 20.36753, -46.684288, -3.4177901e-06, 17.90466, -16.110792, -21.814108, -42.00699, 19.20248, 33.2985, -0.35538077)
+mesh = ExtResource("40_70vth")
+
+[node name="ComputerMesh" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="141" unique_id=111600879]
+transform = Transform3D(-16.158165, 47.317158, 2.0682987e-06, 0, -2.1855694e-06, 50, 47.317158, 16.158165, 7.0629585e-07, 13.770544, 33.68068, -0.7875905)
+mesh = ExtResource("41_wx8uo")
+surface_material_override/1 = SubResource("StandardMaterial3D_70vth")
+
+[node name="ComputerMesh2" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="142" unique_id=493573871]
+transform = Transform3D(16.542156, 47.184288, 2.0624902e-06, -5.7405334e-14, -2.185569e-06, 49.999992, 47.184288, -16.542156, -7.230807e-07, 15.323685, 33.68068, -1.1525754)
+mesh = ExtResource("41_wx8uo")
+surface_material_override/1 = SubResource("StandardMaterial3D_70vth")
+
+[node name="ComputerMesh3" type="MeshInstance3D" parent="Props" parent_id_path=PackedInt32Array(68397599) index="143" unique_id=755913398]
+transform = Transform3D(21.499628, 0.44418737, -45.139427, -1.1057281, 49.987762, -0.034754284, 45.1281, 1.01318, 21.504179, 18.284615, 33.346138, -0.523726)
+mesh = ExtResource("41_wx8uo")
+surface_material_override/1 = SubResource("StandardMaterial3D_70vth")
+
+[node name="Ships" parent="Components" parent_id_path=PackedInt32Array(360484998) index="0" unique_id=87524385 instance=ExtResource("3_p0prn")]
+transform = Transform3D(0.6670608, 2.279398, 0, -2.279398, 0.6670608, 0, 0, 0, 2.375, 24.426472, 42.75454, 0)
+
+[node name="Ships2" parent="Components" parent_id_path=PackedInt32Array(360484998) index="1" unique_id=1052107212 instance=ExtResource("3_p0prn")]
+transform = Transform3D(-1.2968533, 1.9896724, 0, -1.9896724, -1.2968533, 0, 0, 0, 2.3749998, 24.266699, 44.75454, 0)
+
+[node name="Ships3" parent="Components" parent_id_path=PackedInt32Array(360484998) index="2" unique_id=1911656963 instance=ExtResource("3_p0prn")]
+transform = Transform3D(1.477369, 1.8595713, 0, -1.8595713, 1.477369, 0, 0, 0, 2.3749998, 24.383738, 41.98177, 0)
+
+[node name="Ships4" parent="Components" parent_id_path=PackedInt32Array(360484998) index="3" unique_id=1186535884 instance=ExtResource("3_p0prn")]
+transform = Transform3D(1.477369, 1.8595713, 0, -1.8595713, 1.477369, 0, 0, 0, 2.3749998, 24.383738, 39.751347, 0)
+
+[node name="mucus" type="Area3D" parent="Components" parent_id_path=PackedInt32Array(360484998) index="4" unique_id=1756185664]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.446053, 39.467037, 0)
+script = ExtResource("3_m135w")
+metadata/_custom_type_script = "uid://8c24i1lml5dx"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Components/mucus" index="0" unique_id=2010013006]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3431854, 2.8463745, 0)
+shape = SubResource("BoxShape3D_pcft3")
+debug_color = Color(0.65581447, 0.51727057, 3.85046e-07, 0.41960785)
+
+[node name="mucus2" type="Area3D" parent="Components" parent_id_path=PackedInt32Array(360484998) index="5" unique_id=151652085]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 17.872757, 27.092241, 0)
+script = ExtResource("3_m135w")
+metadata/_custom_type_script = "uid://8c24i1lml5dx"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Components/mucus2" index="0" unique_id=1664384022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7496948, 0)
+shape = SubResource("BoxShape3D_ijnin")
+debug_color = Color(0.65581447, 0.51727057, 3.85046e-07, 0.41960785)
+
+[node name="Platform2" type="StaticBody3D" parent="Components" parent_id_path=PackedInt32Array(360484998) index="6" unique_id=1086051237]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.534807, 32.80475, 0)
+script = ExtResource("16_ucg3d")
+metadata/_custom_type_script = "uid://bf33aor6spn1n"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Components/Platform2" index="0" unique_id=168547639]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03930664, 0)
+shape = SubResource("BoxShape3D_hhhfn")
+
+[node name="Platform" type="MeshInstance3D" parent="Components/Platform2" index="1" unique_id=1941618522]
+transform = Transform3D(2.0645447, -0.07416058, -2.220446e-16, -1.8953987e-09, -1.543427e-07, -2.065, 0.043361668, 3.5309494, -9.026402e-08, 0.0025552306, -1.7166138e-05, 0.014781475)
+mesh = ExtResource("17_fn86y")
+
+[node name="Platform" type="StaticBody3D" parent="Components" parent_id_path=PackedInt32Array(360484998) index="7" unique_id=1071318255]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 26.177473, 19.607792, 0)
+script = ExtResource("16_ucg3d")
+metadata/_custom_type_script = "uid://bf33aor6spn1n"
+
+[node name="Component34" type="MeshInstance3D" parent="Components/Platform" index="0" unique_id=1121450628]
+transform = Transform3D(-4.371139e-06, 99.99999, 1.1920929e-05, 0, -1.1920929e-05, 99.99999, 100, 4.3711384e-06, 5.2108036e-13, -0.57573867, 0.06660843, 1.7118244)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Component35" type="MeshInstance3D" parent="Components/Platform" index="1" unique_id=1765332387]
+transform = Transform3D(-4.3711393e-06, 88.179405, -47.163486, 0, 47.163486, 88.179405, 100.000015, 3.854444e-06, -2.0615814e-06, 0.4392914, 0.00075912476, 1.6297817)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Component36" type="MeshInstance3D" parent="Components/Platform" index="2" unique_id=1207706559]
+transform = Transform3D(-4.3711393e-06, -99.34128, -11.4590225, 0, 11.4590225, -99.34128, 100.000015, -4.342345e-06, -5.0088977e-07, -0.17913438, -0.1298027, 1.6297817)
+mesh = ExtResource("8_dpe6j")
+
+[node name="Component37" type="MeshInstance3D" parent="Components/Platform" index="3" unique_id=599349614]
+transform = Transform3D(38.84353, 92.147606, 1.0984851e-05, 0, -1.1920929e-05, 100.00001, 92.14761, -38.843525, -4.630509e-06, 0.31375703, 0.09803772, 0.07262993)
+mesh = ExtResource("9_m8ou3")
+
+[node name="КриваяБезье008" type="MeshInstance3D" parent="Components/Platform" index="4" unique_id=426847398]
+transform = Transform3D(-4.371139e-06, -100, 4.371139e-06, 0, -4.371139e-06, -100, 100, -4.371139e-06, 1.9106854e-13, -0.22372319, 0.09766388, 0.57821846)
+mesh = ExtResource("10_odihm")
+
+[node name="Цилиндр12" type="MeshInstance3D" parent="Components/Platform" index="5" unique_id=1618600555]
+transform = Transform3D(100, 0, 0, 0, -4.371139e-06, 100, 0, -100, -4.371139e-06, 0.8120269, 0.06736374, 1.116663)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр19" type="MeshInstance3D" parent="Components/Platform" index="6" unique_id=386650328]
+transform = Transform3D(100, 0, 0, 0, -4.371139e-06, 100, 0, -100, -4.371139e-06, 0.812027, 0.06736374, 0.32850456)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр20" type="MeshInstance3D" parent="Components/Platform" index="7" unique_id=2094355325]
+transform = Transform3D(91.83949, 30.654171, 25.01658, -23.729633, -7.9204764, 96.82031, 31.660894, -94.85561, -3.0527603e-06, 0.812027, 0.06736374, -0.4648056)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="Цилиндр21" type="MeshInstance3D" parent="Components/Platform" index="8" unique_id=1799899063]
+transform = Transform3D(100, 0, 0, 0, -4.371139e-06, 100, 0, -100, -4.371139e-06, 0.81202704, 0.06736374, -1.2448921)
+mesh = ExtResource("11_vh8st")
+surface_material_override/0 = ExtResource("12_plkcr")
+
+[node name="List" parent="Components/Platform" index="9" unique_id=1638639880 instance=ExtResource("7_ojro4")]
+transform = Transform3D(-0.99999994, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -0.99999994, 0.50021297, 0.58909416, -0.24287033)
+text = "Тут может быть записка"
+await_time = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Components/Platform/List" index="1" unique_id=1076003271]
+shape = SubResource("SphereShape3D_xv7eh")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Components/Platform/List" index="2" unique_id=428995686]
+transform = Transform3D(-2.1855696e-07, 0, 5.0000005, 0, 5.0000005, 0, -5.0000005, 0, -2.1855696e-07, 0, 1.1336689, 0)
+mesh = SubResource("TextMesh_ijnin")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Components/Platform" index="10" unique_id=549664382]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03930664, 0)
+shape = SubResource("BoxShape3D_hhhfn")
+
+[node name="Platform" type="MeshInstance3D" parent="Components/Platform" index="11" unique_id=795357583]
+transform = Transform3D(2.0645447, -0.07416058, -2.220446e-16, -1.8953987e-09, -1.543427e-07, -2.065, 0.043361668, 3.5309494, -9.026402e-08, 0.0025552309, -1.7166138e-05, 0.014781952)
+mesh = ExtResource("17_fn86y")
+
+[node name="Cube002" type="MeshInstance3D" parent="Components/Platform" index="12" unique_id=19740179]
+transform = Transform3D(49.908836, -3.0173507, -1.3189276e-07, 4.0066688e-14, -2.1855697e-06, 50, -3.0173507, -49.908836, -2.1815838e-06, 0.4605006, 0.09521675, -0.49409103)
+mesh = ExtResource("25_wqun2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Components/Platform" index="13" unique_id=582531305]
+libraries/ = SubResource("AnimationLibrary_04wwc")
+autoplay = &"stable"
+script = SubResource("GDScript_x0bbt")
+
+[node name="Platform3" type="StaticBody3D" parent="Components" parent_id_path=PackedInt32Array(360484998) index="8" unique_id=2061662033]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.14226, 23.922924, 0)
+script = ExtResource("16_ucg3d")
+metadata/_custom_type_script = "uid://bf33aor6spn1n"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Components/Platform3" index="0" unique_id=143772321]
+shape = SubResource("BoxShape3D_plkcr")
+
+[node name="Platform" type="MeshInstance3D" parent="Components/Platform3" index="1" unique_id=965417636]
+transform = Transform3D(2.065, 0, 0, 0, -1.5437674e-07, -2.065, 0, 3.531728, -9.026402e-08, 0.0025552306, 0.03790784, 0.014781477)
+mesh = ExtResource("17_fn86y")
+
+[node name="Platform4" type="StaticBody3D" parent="Components" parent_id_path=PackedInt32Array(360484998) index="9" unique_id=1867261869]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.8957171, 26.509642, 0)
+script = ExtResource("16_ucg3d")
+metadata/_custom_type_script = "uid://bf33aor6spn1n"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Components/Platform4" index="0" unique_id=689427175]
+shape = SubResource("BoxShape3D_fn86y")
+
+[node name="Platform" type="MeshInstance3D" parent="Components/Platform4" index="1" unique_id=1517091512]
+transform = Transform3D(2.064603, -0.07695878, -1.110223e-16, -1.7701374e-09, -1.7150509e-07, -2.065, 0.04049602, 3.923579, -9.026402e-08, 0.0025552306, -1.7166138e-05, 0.014781952)
+mesh = ExtResource("17_fn86y")
+
+[node name="Marker3D2" type="Marker3D" parent="Components/Platform4" index="2" unique_id=1069566060]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6.946385e-08, -0.00041294098, 1.5891476)
+
+[node name="Platform6" type="StaticBody3D" parent="Components" parent_id_path=PackedInt32Array(360484998) index="10" unique_id=102648682]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.61121464, 31.217815, 0)
+script = ExtResource("16_ucg3d")
+metadata/_custom_type_script = "uid://bf33aor6spn1n"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Components/Platform6" index="0" unique_id=324405470]
+shape = SubResource("BoxShape3D_fn86y")
+
+[node name="Platform" type="MeshInstance3D" parent="Components/Platform6" index="1" unique_id=317326821]
+transform = Transform3D(2.064603, -0.07695878, -1.110223e-16, -1.7701374e-09, -1.7150509e-07, -2.065, 0.04049602, 3.923579, -9.026402e-08, 0.0025552306, -1.7166138e-05, 0.014781952)
+mesh = ExtResource("17_fn86y")
+
+[node name="Marker3D2" type="Marker3D" parent="Components/Platform6" index="2" unique_id=1428873119]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6.946385e-08, -0.00041294098, 1.5891476)
+
+[node name="Platform5" type="StaticBody3D" parent="Components" parent_id_path=PackedInt32Array(360484998) index="11" unique_id=922560777]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 23.01121, 24.160183, 0)
+script = ExtResource("16_ucg3d")
+metadata/_custom_type_script = "uid://bf33aor6spn1n"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Components/Platform5" index="0" unique_id=341875235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0703125)
+shape = SubResource("BoxShape3D_04wwc")
+
+[node name="Platform" type="MeshInstance3D" parent="Components/Platform5" index="1" unique_id=1407671303]
+transform = Transform3D(2.065, 0, 0, 0, -1.5437674e-07, -2.065, 0, 3.531728, -9.026402e-08, 0.0025551533, -1.7166138e-05, 1.7864436)
+mesh = ExtResource("17_fn86y")
+
+[node name="Platform2" type="MeshInstance3D" parent="Components/Platform5" index="2" unique_id=1642703868]
+transform = Transform3D(2.0637288, -0.12390141, 3.166676e-09, 0, -1.5437672e-07, -2.065, 0.0724451, 3.5295534, -9.0208445e-08, 0.0025552989, -1.7166138e-05, -1.5433524)
+mesh = ExtResource("17_fn86y")
+
+[node name="Block" parent="LevelComponent" parent_id_path=PackedInt32Array(1845701943) index="0" unique_id=2090620104 instance=ExtResource("2_ty1rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.660263, 47.042656, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelComponent/Block" index="0" unique_id=1285945614]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6195679, 0)
+shape = SubResource("BoxShape3D_m135w")
+debug_color = Color(0.98905617, 0, 0.30025986, 0.41960785)
+
+[node name="SavePoint" type="Area3D" parent="LevelComponent" parent_id_path=PackedInt32Array(1845701943) index="1" unique_id=98950530]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.115318, 46.94442, 0)
+script = ExtResource("6_dj5hn")
+metadata/_custom_type_script = "uid://u7u3dqeopabw"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelComponent/SavePoint" index="0" unique_id=1947118603]
+shape = SubResource("SphereShape3D_ojro4")
+debug_color = Color(0, 0.6500049, 0.13225436, 0.41960785)
+
+[node name="SavePoint2" type="Area3D" parent="LevelComponent" parent_id_path=PackedInt32Array(1845701943) index="2" unique_id=2001072221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.307913, 25.35893, 0)
+script = ExtResource("6_dj5hn")
+metadata/_custom_type_script = "uid://u7u3dqeopabw"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelComponent/SavePoint2" index="0" unique_id=1137540183]
+shape = SubResource("SphereShape3D_ojro4")
+debug_color = Color(0, 0.6500049, 0.13225436, 0.41960785)
+
+[node name="SavePoint3" type="Area3D" parent="LevelComponent" parent_id_path=PackedInt32Array(1845701943) index="3" unique_id=511043547]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.904663, 25.35893, 0)
+script = ExtResource("6_dj5hn")
+metadata/_custom_type_script = "uid://u7u3dqeopabw"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelComponent/SavePoint3" index="0" unique_id=37768560]
+shape = SubResource("SphereShape3D_ojro4")
+debug_color = Color(0, 0.6500049, 0.13225436, 0.41960785)
+
+[node name="EndLevel" type="Area3D" parent="LevelComponent" parent_id_path=PackedInt32Array(1845701943) index="4" unique_id=1780556021]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 12.246595, 0)
+script = ExtResource("8_xv7eh")
+metadata/_custom_type_script = "uid://d00diagj14xvf"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelComponent/EndLevel" index="0" unique_id=1761034860]
+shape = SubResource("SphereShape3D_ijnin")
+debug_color = Color(0.9928281, 0, 0.25304213, 0.41960785)
+
+[node name="EndLevel2" type="Area3D" parent="LevelComponent" parent_id_path=PackedInt32Array(1845701943) index="5" unique_id=841318526]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.61983, 12.246595, 0)
+script = ExtResource("8_xv7eh")
+metadata/_custom_type_script = "uid://d00diagj14xvf"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelComponent/EndLevel2" index="0" unique_id=333076949]
+shape = SubResource("SphereShape3D_ijnin")
+debug_color = Color(0.9928281, 0, 0.25304213, 0.41960785)
+
+[node name="Player" parent="." index="7" unique_id=107747127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3980474, 47.360306, 0)
+
+[node name="Path" parent="." index="8" unique_id=767081660]
+path = "res://Levels/level2.tscn"
+
+[connection signal="callable" from="Components/Platform/List" to="Components/Platform/AnimationPlayer" method="play_anim"]

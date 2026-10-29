@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dteealvwo2fuv"]
+
+[ext_resource type="Texture2D" uid="uid://cxerf6o38pn83" path="res://Assets/Models/Textures_Charaster/Base_color.png" id="1_dgqmo"]
+
+[resource]
+resource_name = "Body"
+transparency = 4
+albedo_color = Color(1, 1, 1, 0.8627451)
+albedo_texture = ExtResource("1_dgqmo")
+roughness = 0.26
+rim_enabled = true
+rim = 0.35
+rim_tint = 1.0
+backlight_enabled = true
+backlight = Color(0.57626706, 0.48098713, 0.2731163, 1)

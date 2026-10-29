@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://wfvebvhxm4f7"]
+
+[ext_resource type="Texture2D" uid="uid://ccfm350cgucri" path="res://Assets/Models/Character/textures/Character_CharacterMaterial_BaseColor.png" id="1_8vjm7"]
+
+[resource]
+resource_name = "Eyes"
+render_priority = 1
+transparency = 4
+albedo_color = Color(1, 1, 1, 0.9098039)
+albedo_texture = ExtResource("1_8vjm7")
+roughness = 0.38
+backlight_enabled = true
+backlight = Color(0.47397572, 0.47397578, 0.4739756, 1)

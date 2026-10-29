@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bwdbt125d72ri"]
+
+[ext_resource type="Texture2D" uid="uid://dogdhfkwek4dx" path="res://Assets/Models/Folding tables/source/SM_Folding_Table_Pack_JFG_1_0.png" id="1_slnng"]
+[ext_resource type="Texture2D" uid="uid://ckkmb2dnoi881" path="res://Assets/Models/Folding tables/source/SM_Folding_Table_Pack_JFG_1_1.png" id="2_ng83r"]
+
+[resource]
+resource_name = "M_Folding_Table_JFG_1"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_slnng")
+emission_enabled = true
+normal_enabled = true
+normal_scale = 0.0
+normal_texture = ExtResource("2_ng83r")

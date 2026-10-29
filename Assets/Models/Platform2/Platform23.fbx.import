@@ -1,0 +1,74 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://b4tj48nfnopds"
+path="res://.godot/imported/Platform23.fbx-0fd20e75bbccd3fdac680a92675ba66e.scn"
+
+[deps]
+
+source_file="res://Assets/Models/Platform2/Platform23.fbx"
+dest_files=["res://.godot/imported/Platform23.fbx-0fd20e75bbccd3fdac680a92675ba66e.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+mesh_library/use_node_names_as_mesh_names=false
+array_mesh/deduplicate_surfaces=true
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Platform23Material": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Assets/Models/Platform2/Platform23Material.tres",
+"use_external/path": "uid://htxwplcjqe1v"
+}
+},
+"meshes": {
+"Platform2Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Assets/Models/Platform2/Platform2Mesh.res",
+"save_to_file/path": "uid://bkyf0g31gdkjb"
+},
+"Platform3Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Assets/Models/Platform2/Platform3Mesh.res",
+"save_to_file/path": "uid://ce2sdaco5ymge"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2
