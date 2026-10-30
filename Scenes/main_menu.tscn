@@ -856,7 +856,6 @@ offset_right = 702.0
 offset_bottom = 275.5
 grow_vertical = 2
 script = SubResource("GDScript_1xund")
-count = 7
 
 [node name="Control" type="Control" parent="ui/GridContainer" unique_id=1695573749]
 custom_minimum_size = Vector2(0, 39.5)

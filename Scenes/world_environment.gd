@@ -82,8 +82,12 @@ func apply_settings() -> void:
 			)
 
 
-func sdfi_reset():
+func sdfi_reset() -> void:
+	if Data.sdfgi == 0:
+		environment.sdfgi_enabled = false
+		return
 	environment.sdfgi_enabled = false
 	await get_tree().create_timer(1.0).timeout
+	if not is_inside_tree():
+		return
 	environment.sdfgi_enabled = true
-	print('SDFGI сброшен.')
